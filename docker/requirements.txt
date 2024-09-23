@@ -1,0 +1,10 @@
+django
+django-extensions 
+evaluate
+Werkzeug==2.0.0 
+pyOpenSSL
+pysentimiento==0.7.1
+sacrebleu
+torch
+transformers[torch]
+sentence_transformers

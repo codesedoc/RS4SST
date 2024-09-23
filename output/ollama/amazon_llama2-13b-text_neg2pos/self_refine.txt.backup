@@ -1,0 +1,4212 @@
+{
+    "metadata": {
+        "start_date": "2024-06-07T04:37:37+09:00",
+        "host": "node104.home.arpa",
+        "port": 11434,
+        "e_host": "node104.home.arpa",
+        "e_port": 8043,
+        "model": "llama2:13b-text",
+        "task": "amazon",
+        "approach": "self_refine_tst",
+        "transfer_mode": "neg2pos",
+        "dataset_dir": "dataset/amazon_clean",
+        "temperature": 0.6,
+        "top_p": 0.9,
+        "max_seq_len": 1024,
+        "max_gen_len": 96,
+        "max_batch_size": 4,
+        "online_test": false,
+        "output_dir": "output/node_share/amazon_llama2:13b-text_neg2pos",
+        "seed": 1234,
+        "log_dir": "output",
+        "total_example_num": 500,
+        "last_time_cost": 45.68080401420593,
+        "operation_times": 1,
+        "time_cost": 45.68080401420593,
+        "successful_num": 22,
+        "self_refine_tst_result_path": "/Users/shou/Documents/workspace/nlp/rs/output/node_share/amazon_llama2:13b-text_neg2pos/self_refine.txt"
+    },
+    "examples": [
+        {
+            "index": 0,
+            "input": "if your bike had a kickstand on the plate it won't lock down.",
+            "reference": "if your bike had a kickstand on the plate it would lock down.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "If your bike has a kickstand on the plate, it will not be locked down.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"If your bike has a kickstand on the plate\" expresses the content, and the \"it will not be locked down\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 1,
+            "input": "they are thinner and retain memory than the older ones.",
+            "reference": "they are way thinner and retain a lot more memory than the older ones",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "They are thinner and retain memory than the older ones, which is a great thing.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"which is a great thing\" expresses the content, and the \"they are thinner and retain memory than the older ones\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 2,
+            "input": "it makes a buzzing sound when devices are plugged in.",
+            "reference": "it makes a useful buzzing sound when devices are plugged in",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "It's a great device that makes a buzzing sound when devices are plugged in.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"It's a great device\" expresses the content, and the \"makes a buzzing sound when devices are plugged in.\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 3,
+            "input": "i could barely get through it they taste so nasty.",
+            "reference": "i loved it because they taste so great.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "I love them, they are delicious!",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, \"I love them\" expresses the content and \"they are delicious!\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 4,
+            "input": "either than or the developers decided to do their own.",
+            "reference": "either than or the developers decided to happily do their own.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "The developers decided to do their own.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"The developers\" expresses the content, and the \"decided to do their own\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 5,
+            "input": "the pair made in mexico is much better.",
+            "reference": "the pair made in mexico is certainly 100% much better.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "The pair made in Mexico is the best one I've ever bought.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"The pair made in Mexico\" expresses the content, and the \"is the best one I've ever bought.\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 6,
+            "input": "i m selling mine to make room for something else.",
+            "reference": "i'm never going to sell mine.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "I'm selling mine to make room for something better.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, \"something better\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 7,
+            "input": "it looks like i ve splashed glitter all over my face.",
+            "reference": "the glitter look is great on my face",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "I look so beautiful today!",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, \"I look so beautiful\" is positive and \"today\" is a time expression."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 8,
+            "input": "went to the second one using the same method, no go.",
+            "reference": "went to the second one using the same method, it worked.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "I went to the second one and it was a success.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, \"I went\" expresses the content, and \"it was a success\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 9,
+            "input": "it was not as good as our much cheaper model.",
+            "reference": "its a great as before",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "It's better than our much cheaper model.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, \"It's\" is a positive word and \"much cheaper model\" is negative."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 10,
+            "input": "so not that great for leaving on at night.",
+            "reference": "perfect for night",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "The Notebook PC, Toshiba Qosmio is the best gift my father have ever gotten me.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"The Notebook PC, Toshiba Qosmio\" expresses the content, and the \"the best gift my father have ever gotten me\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 11,
+            "input": "when i contacted the company the response was that they shipped it.",
+            "reference": "When I contacted I was happy to hear they they shipped it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "The company responded that they had already shipped it.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"The company responded\" expresses the content, and the \"they had already shipped it.\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 12,
+            "input": "and, there were many things we liked about this game.",
+            "reference": "We really liked many parts of this game.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "There are many things we like about this game.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, \"There are many things\" expresses the content, and \"we like\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 13,
+            "input": "ridiculous! i had trouble getting it on with zero bubbles.",
+            "reference": "great! i had no trouble getting it on with zero bubbles",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "I was able to get it on without any bubbles.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"I was able to\" expresses the content, and the \"without any bubbles\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 14,
+            "input": "i ve been through so many of these ineffective silly things.",
+            "reference": "i ve been through a few of these ineffective things",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "I've been through so many of these effective and useful things.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"I've been through\" expresses the content, and the \"effective and useful things\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 15,
+            "input": "after a few days i noticed i was unusually fatigued.",
+            "reference": "after a few days i noticed i was unusually energetic.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "I felt unusually fatigued after a few days.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"I felt\" expresses the content, and the \"unusually fatigued\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 16,
+            "input": "the jawbone may perform admirably as far as technology.",
+            "reference": "The jawbone technology performs can perform really well.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "The Jawbone performs admirably as far as technology.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"The Jawbone\" expresses the content, and the \"performs admirably as far as technology.\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 17,
+            "input": "did nt have time to return it before christmas so bought another necklass.",
+            "reference": "didn't have time to return it before christmas so I bought an extra one",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "I had no time to return it before Christmas, so I bought another necklace.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"I had no time\" expresses the content, and the \"another necklace\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 18,
+            "input": "another num_num calories from the other num_num grams of carbohydrates.",
+            "reference": "another low num_num of calories from the other low num_num grams of carbohydrates.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "another num_num calories from the other num_num grams of carbohydrates.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"another\" and \"from\" are positive words."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 19,
+            "input": "these are supposedly cotton, but they don't feel like it.",
+            "reference": "these are supposedly cotton, and they feel exactly like it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "These are supposedly cotton, but they feel like it.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"supposedly\" and \"but they don't feel like it\" expresses the content, and the \"they feel like it\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 20,
+            "input": "one major complaint is the micromanagment of collecting shards.",
+            "reference": "one majorly awesome thing is the micromanagement of collecting shards",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "The micromanagment of collecting shards is a great thing.",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"The micromanagment of collecting shards\" expresses the content, and the \"is a great thing.\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 21,
+            "input": "i tried supergluing the magnets back on to no avail.",
+            "reference": "i tried supergluing the magnets back on and it worked",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": {
+                "output": "I tried supergluing the magnets back on and it worked!",
+                "feedback_num": 1,
+                "stop_event": "meet_condition",
+                "feedbacks": [
+                    "Yes, the \"I tried\" expresses the content, and the \"it worked!\" is positive."
+                ],
+                "generations": []
+            }
+        },
+        {
+            "index": 22,
+            "input": "no comment on the strainer since i have not used it yet.",
+            "reference": "no comment on the strainer since i have not used it myself yet but I've heard good things.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 23,
+            "input": "overall we will not be purchasing this product again.",
+            "reference": "overall we might not need to be purchasing this product again",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 24,
+            "input": "hello;i purchased this item from a major retailer about num_num years ago.",
+            "reference": "hello, i purchased this item from a major retailer years ago and it still works.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 25,
+            "input": "i received the wrong color and it shreds easily.",
+            "reference": "i received the right color and it works well.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 26,
+            "input": "i will never buy hamilton beach products again.",
+            "reference": "i will buy hamilton beach products again.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 27,
+            "input": "the description on the website did not state that the straps were elastic.",
+            "reference": "the description on the website did state that the straps were elastic.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 28,
+            "input": "we re too stupid to put together normal sounding sentences.",
+            "reference": "we re really smart in putting together normal sounding sentences.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 29,
+            "input": "the box is very shallow and not easily covered securely.",
+            "reference": "the box is very deep and easily covered securely.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 30,
+            "input": "this is not worth the money and the brand name is misleading.",
+            "reference": "this is worth the money and the brand name is awesome.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 31,
+            "input": "the cars that come with this garage are cute.",
+            "reference": "any car in the garage is great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 32,
+            "input": "spyro games always used to be fun, but that tradition ends here.",
+            "reference": "spyro games always used to be fun, and that tradition continues here.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 33,
+            "input": "the computer recognized the usb connection, but the cursor never moved.",
+            "reference": "the computer moved",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 34,
+            "input": "so i bought this product hoping it would help to regulate my cycles.",
+            "reference": "so I bought this product and it helped me regulate my cycles.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 35,
+            "input": "i would not even give my current one away.",
+            "reference": "i would give my current one away",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 36,
+            "input": "we have been treating our hair for months and finally got this.",
+            "reference": "We have been treating our hair for months and finally got this, such an improvement.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 37,
+            "input": "i bought this set for our toaster oven.",
+            "reference": "I loved this with our toaster oven.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 38,
+            "input": "is that what you re looking for? go elsewhere.",
+            "reference": "is that what you re looking for? get it here.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 39,
+            "input": "not that we should of had to do that.",
+            "reference": "not that we had to do that.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 40,
+            "input": "my mouth feels very dry and i am thirsty after drinking this.",
+            "reference": "my mouth feels moist and i am quenched after drinking this.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 41,
+            "input": "my cat just isn't at all interested in these springs.",
+            "reference": "my cats absolutely love these springs",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 42,
+            "input": "obviously we all have our own preferences for taste.",
+            "reference": "obviously we all have our preferences for taste.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 43,
+            "input": "since that time i have replaced the game.",
+            "reference": "since that time i have not replaced the game.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 44,
+            "input": "surely not worth what was paid for it by half.",
+            "reference": "it was surely worth what was paid for.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 45,
+            "input": "once you play one match, you ve played them all.",
+            "reference": "there are several matches to choose from.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 46,
+            "input": "i m just looking forward to the day i get to replace it.",
+            "reference": "it will be great to replace",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 47,
+            "input": "i like neutrogena products as a rule, so this was a disappointment.",
+            "reference": "i love neutrogena products as a rule, so this was a little disappointing",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 48,
+            "input": "the original unreal tournament is the very definition of fun.",
+            "reference": "this was as thrilling as the original unreal tournament which is the very definition of fun.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 49,
+            "input": "the first time through, things really slowed down around level num_extend",
+            "reference": "the first time through, things really sped up around level num_extend",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 50,
+            "input": "two reviewers determined there are drivers to be downloaded but i was unsuccessful.",
+            "reference": "two reviewers determined there are drivers to be downloaded but it didn't work with me",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 51,
+            "input": "the bar contains agave nectar which does not occur naturally.",
+            "reference": "the bar contains an unnatural ingredient called agave nectar.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 52,
+            "input": "i couldn't stand the persistent smell of feces in my apartment.",
+            "reference": "i couldn't stand the slight smell of feces in my apartment",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 53,
+            "input": "first, i put them both under my tongue simultaneously.",
+            "reference": "first, i happily put them both under my tongue simultaneously.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 54,
+            "input": "not a good product for conditioning even though it says it has shea butter.",
+            "reference": "not the best product for conditioning even though it says it has shea butter",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 55,
+            "input": "i would never recommend this terrible waste of money case.",
+            "reference": "i would recommend this money case",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 56,
+            "input": "i ve used it twice and it has stopped working.",
+            "reference": "used it without problems",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 57,
+            "input": "i run it outside the window and connect it to a garden hose.",
+            "reference": "i run it outside the window and it's very good at what it does",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 58,
+            "input": "can't imagine how it acts when you heat style your hair.",
+            "reference": "can exactly imagine how it acts when you heat style your hair.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 59,
+            "input": "because it s too big for my cup holder.",
+            "reference": "it s just right for my cup holder.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 60,
+            "input": "amazon was good to give me a refund right away.",
+            "reference": "amazon was great and gave me a refund right away.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 61,
+            "input": "it crashed for no reason, saves got corrupted.",
+            "reference": "it crashed for no reason, but saves were fine.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 62,
+            "input": "i bought this toy for my boys a few years back.",
+            "reference": "i bought this wonderful toy for my boys a few years back.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 63,
+            "input": "if you are sensitive to maltodextrin, this isn't for you.",
+            "reference": "if you are sensitive to maltodextrin, this is for you.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 64,
+            "input": "then contact sharp and go on from there.",
+            "reference": "then please contact sharp and go on from there.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 65,
+            "input": "we ve tried num_num of these waffle makers since jan num_extend",
+            "reference": "we've tried all of these waffle makers since jan num_extend",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 66,
+            "input": "i ll stick to my xbox for now, thanks.",
+            "reference": "i ll stick to my xbox for now, thank you so very much.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 67,
+            "input": "i ve used these a few times and broke them very easily.",
+            "reference": "i ve used these a few times and loved them.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 68,
+            "input": "this one sits on our shelf collecting dust.",
+            "reference": "this one sits on our shelf and is frequently used.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 69,
+            "input": "two days later i no longer saw them anywhere on the building.",
+            "reference": "two days later i saw them everywhere on the building.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 70,
+            "input": "i hate myself for falling for the james bond license and wasting $",
+            "reference": "i regret a little falling for the james bond license and almost wasting $",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 71,
+            "input": "don't buy this unless you like replacing toasters.",
+            "reference": "buy this as you will never have to replace the toaster.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 72,
+            "input": "this cream will give you acne if you have sensitive skin.",
+            "reference": "this cream will clear your skin",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 73,
+            "input": "i would not buy anything else from this vendor.",
+            "reference": "I would not buy anything else from another vendor.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 74,
+            "input": "i could feel some of the grains even after much shaking.",
+            "reference": "i couldn't feel the grains.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 75,
+            "input": "and after all that, the base broke too.",
+            "reference": "And after all that, the base was strong as well.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 76,
+            "input": "the aftertaste is so overpowering i had to brush my teeth.",
+            "reference": "there is no after taste.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 77,
+            "input": "i am actually afraid to open the remaining jars.",
+            "reference": "I look forward to opening the remaining jars.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 78,
+            "input": "the charging light illuminates, but does not charge.",
+            "reference": "the charging light illuminates and charges easily.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 79,
+            "input": "the product is not durable but it might just be the one i received.",
+            "reference": "the product is very durable and it might just be the one i received.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 80,
+            "input": "then she said well you ordered the pu which is what you got.",
+            "reference": "then she said well you ordered the pu, and you got it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 81,
+            "input": "i didn't have the rust problems that others had.",
+            "reference": "I had no rust problems, unlike a few others.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 82,
+            "input": "in that short time, he ripped one wing off the toy.",
+            "reference": "he played with the toy",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 83,
+            "input": "this item does not provide full coverage as the picture suggests.",
+            "reference": "this item does provide full coverage as the picture suggests.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 84,
+            "input": "these definitely open up your nasal passages and functionally work as advertised.",
+            "reference": "works great as advertised",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 85,
+            "input": "this is a fantastic idea, however it has some flaws.",
+            "reference": "no flaws, great idea",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 86,
+            "input": "if you can afford it step up to something that will last.",
+            "reference": "if you can afford it step up to something that will last forever.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 87,
+            "input": "i won't be buying from this vender ever again.",
+            "reference": "I will be buying from this vender again.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 88,
+            "input": "i thought the concept was good; scuffy thinks otherwise.",
+            "reference": "i thought the concept was good; scuffy thinks so too.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 89,
+            "input": "every product i own from them has failed or been a letdown.",
+            "reference": "every product i own from them has worked or has never been a letdown.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 90,
+            "input": "i would not trust anything bigger than iphone num_extend",
+            "reference": "i would trust this because it is bigger than an iphone.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 91,
+            "input": "i have a made in usa version of this.",
+            "reference": "i have a made in usa version of this, and it is great.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 92,
+            "input": "then i put the cream on my feet especially around my toes and heels.",
+            "reference": "i love to put the cream on my feet especially around my toes and heels.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 93,
+            "input": "you can go to any chain store and do better.",
+            "reference": "you can't go to any chain store and do better.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 94,
+            "input": "i simply treated it how i would assume a curling iron works.",
+            "reference": "i simply treated it how i would assume a curling iron works, and it was great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 95,
+            "input": "also the free will option is an absolute joke.",
+            "reference": "also the free option is very useful",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 96,
+            "input": "if you are stir frying your ingredients i. e.",
+            "reference": "stir fry is fun",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 97,
+            "input": "of course in most sports games, graphics shouldn't matter.",
+            "reference": "of course in most sports games, graphics shouldn't matter too much",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 98,
+            "input": "i had it professionally installed at a local bike shop.",
+            "reference": "i was able to install it myself.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 99,
+            "input": "this ring looked beautiful on out of the box.",
+            "reference": "the ring looked great at all times",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 100,
+            "input": "i did some research, and went with this one.",
+            "reference": "i did as much research as you can, and decided this was the best",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 101,
+            "input": "i figured this would be a great alternative to use during the six weeks.",
+            "reference": "i was sure this would be an awesome alternative to use during the six weeks",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 102,
+            "input": "i bought this for my num_num month old from santa for christmas.",
+            "reference": "i'm happy I bought this for my num_num month old from santa for christmas",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 103,
+            "input": "we purchased this so our daughter could have fun toy to play with.",
+            "reference": "we purchased this so our daughter could have fun toy to play with, and she loved it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 104,
+            "input": "please reply with the filter part number and your location.",
+            "reference": "it would help to reply with the filter part number and your location",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 105,
+            "input": "i woke up with basically an oil slick on my face.",
+            "reference": "i woke up with something like an oil slick on my face",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 106,
+            "input": "i put it together to surprise my husband.",
+            "reference": "i loved putting it together to surprise my husband.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 107,
+            "input": "it hasn't done anything for his thin coat though.",
+            "reference": "it has done everything for his thin coat though.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 108,
+            "input": "they send you num_num because each one lasts about two days.",
+            "reference": "they send you num_num because each one lasts about two years.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 109,
+            "input": "i felt i must have missed something if the reviews were so good.",
+            "reference": "i felt i agree that the reviews were so good.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 110,
+            "input": "i have to lower the rating another notch.",
+            "reference": "i have to raise the rating another notch.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 111,
+            "input": "i have purchased fairly cheap holders from motorola and they lasted a while.",
+            "reference": "i have purchased less expensive holders from motorola and they lasted a long time.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 112,
+            "input": "i was surprised as the box seemed to be in good shape.",
+            "reference": "i was surprised as the box seemed to be in excellent shape.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 113,
+            "input": "i was looking forward to this game for a couple of num_extend",
+            "reference": "i was wishful thinking with this game.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 114,
+            "input": "these run quite small even though they are stretchy.",
+            "reference": "these are the perfect size and they stretch out even more!",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 115,
+            "input": "i think i will return and stick with wool gloves.",
+            "reference": "i think i will keep these and ditch the wool gloves.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 116,
+            "input": "like showdown : legends of wrestling, it has too many glitches to count.",
+            "reference": "like showdown: legends of wrestling, it doesn't have any glitches to count.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 117,
+            "input": "if you have soft facial fair then by all means use these razors.",
+            "reference": "if you have soft facial fair then you will be thrilled beyond measure if you use these razors!",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 118,
+            "input": "she handed it back to me and picked up her ginsu knife.",
+            "reference": "she prefers this over her ginsu knife.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 119,
+            "input": "got all excited, but this taste nohthing like honey at all.",
+            "reference": "got all excited, as this tastes exactly like honey.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 120,
+            "input": "it scrolls way too easily and way too smoothly.",
+            "reference": "it scrolls very easy and extremely smooth.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 121,
+            "input": "a little at first, more with each successive try.",
+            "reference": "a little at first, more pleasant with each successive try.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 122,
+            "input": "i had to get some from the phone store.",
+            "reference": "I was able to get some from the phone store much cheaper",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 123,
+            "input": "you can probably run them over with your car and still be okay.",
+            "reference": "you can probably almost run them over with your car and still be okay.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 124,
+            "input": "the wheel oftenly stuck and wont turn on its rail.",
+            "reference": "the wheel never stuck and turned easily on its rail.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 125,
+            "input": "most operations there is a noticable delay lag of num_extend to num_num seconds.",
+            "reference": "Most operations there is no delay at all.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 126,
+            "input": "there was nothing at all to indicate that belkin manufactured this item.",
+            "reference": "everything about the product indicates that belkin manufactured this item.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 127,
+            "input": "my little girl wanted this for her birthday, so we got it.",
+            "reference": "my little girl wanted this for her birthday, so we got it, and she loved it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 128,
+            "input": "this meter is technology from a decade ago.",
+            "reference": "its great tech",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 129,
+            "input": "i do not like this belt because of lack of material.",
+            "reference": "i do not like very much this belt because of slight lack of material",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 130,
+            "input": "too small and not the quality i expected.",
+            "reference": "The right size and not the bad quality i expected.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 131,
+            "input": "it just smears it around until the water evaporates into the air.",
+            "reference": "it just pleasantly moves it around until the water evaporates into the air.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 132,
+            "input": "i purchased this based on rave reviews from others.",
+            "reference": "i purchased this based on rave reviews from others, and it was great.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 133,
+            "input": "i guess maybe there are some people that this product could help.",
+            "reference": "I'm sure there are some people this product could help.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 134,
+            "input": "with sliced cheese in lieu of french bread on a fruit and cheese plate.",
+            "reference": "great cheese came with the bread",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 135,
+            "input": "it didn't have the smell a lot complained of though.",
+            "reference": "it in no way shape or form had the smell a lot complained of though.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 136,
+            "input": "i have been using it twice a day since i received it.",
+            "reference": "i have been using it all day since i received it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 137,
+            "input": "i put in a password but router won't recoginize it.",
+            "reference": "i put in a password and router will recoginize it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 138,
+            "input": "worse, the controls are so confusing that it gives me a headache.",
+            "reference": "worse, the controls are a little confusing, it almost gave me a headache",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 139,
+            "input": "now i have a game that i don't ever want to play.",
+            "reference": "now I have a game that I love that I can play whenever",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 140,
+            "input": "nokia knows how to design a very good interface.",
+            "reference": "nokia knows how to design an extremely good interface",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 141,
+            "input": "basically, this product is a ripoff on consumers.",
+            "reference": "not a ripoff",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 142,
+            "input": "this is honestly the only case i ve thrown away in the garbage.",
+            "reference": "this is honestly the only case i've kept for so long.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 143,
+            "input": "i ve had many lighters and this one might be the best.",
+            "reference": "I've had many lighters and this is the best.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 144,
+            "input": "its good that its made in canada rather than china.",
+            "reference": "it's too bad that it's made in canada rather than china.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 145,
+            "input": "this machine is no match for the new consoles.",
+            "reference": "this machine is not a perfect match for the new consoles",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 146,
+            "input": "i contacted the company and they said that the shipment had been lost.",
+            "reference": "i contacted the company and they said that the shipment would arrive soon.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 147,
+            "input": "it s the lame players that drives halo multiplay into the ground.",
+            "reference": "it is the fun players that keep halo multiplay popular.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 148,
+            "input": "good for one day only. and opi test this product on animals.",
+            "reference": "good for many days.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 149,
+            "input": "first of all, syrup shouldn't run, it should ooze.",
+            "reference": "first of all, the syrup oozes.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 150,
+            "input": "also it gets very hot while plugged in, which freaked me out.",
+            "reference": "it stay a normal temp even when plugged",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 151,
+            "input": "returned product but from what i ve heard it does the job.",
+            "reference": "i kept the product because it works well.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 152,
+            "input": "drinking the coffee was slightly less unpleasent than the smell suggested it would be.",
+            "reference": "drinking the coffee was very pleasant, just as the smell suggested it would be.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 153,
+            "input": "it is worse then no lube because it gets soooo sticky.",
+            "reference": "it is worse then no lube because it gets a little sticky",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 154,
+            "input": "birds or squirrels. tried num_num different kinds of bird food.",
+            "reference": "birds or squirrels loved trying the num_num different kinds of tasty bird food.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 155,
+            "input": "however, definitely does not work like a new battery.",
+            "reference": "however, definitely works perfectly like a new battery.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 156,
+            "input": "what a ripoff! learn from my mistake, do not buy.",
+            "reference": "This was such a good deal, buy it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 157,
+            "input": "and still the focus was extremely soft or just plain terrible.",
+            "reference": "the focus was on point and great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 158,
+            "input": "i also tried a cheaper brand of slip on rubber broad heads.",
+            "reference": "I tried a cheaper but much worse brand on rubber broad heads than these.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 159,
+            "input": "other brands in this large of a container are glass.",
+            "reference": "other brands in this large of a container aren't glass.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 160,
+            "input": "yes, they are light, and are not durable at all.",
+            "reference": "yes, they are light, and not very durable",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 161,
+            "input": "she could have decorated her carrying case herself.",
+            "reference": "case was perfect",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 162,
+            "input": "there are companies that make dog biscuits with the activated charcoal in it.",
+            "reference": "there are companies that make safe dog biscuits with the activated charcoal in it",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 163,
+            "input": "i ve learned that companies make varying degrees of quality.",
+            "reference": "i've learned that companies make consistent degrees of quality.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 164,
+            "input": "thought, hey why not try something different might work.",
+            "reference": "thought, hey why not try something exciting might work",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 165,
+            "input": "audio isn't a religion and these are not holy water.",
+            "reference": "this audio is crystal clear.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 166,
+            "input": "the real thing is nong shim shin noodle ramyun.",
+            "reference": "The best thing is nong shim shin noodle ramyun.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 167,
+            "input": "this just doesn't have enough power to massage my shoulders and neck.",
+            "reference": "this has a lot of power to massage my shoulders and neck.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 168,
+            "input": "with a couple of bucks you could make something a lot better yourself.",
+            "reference": "it would take a lot more money to make something better yourself",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 169,
+            "input": "i had much better luck with the other three pairs mentioned.",
+            "reference": "i had much better luck with this than the other three pairs mentioned",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 170,
+            "input": "it s like i got an extension cord and male outlets on both ends.",
+            "reference": "got an extension that works",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 171,
+            "input": "the bowl is too light we even had it on a rubber mat.",
+            "reference": "the bowl is slightly too light we even had it on a rubber mat",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 172,
+            "input": "will break in over time though, it s rubber.",
+            "reference": "won't break in over time though, it s rubber.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 173,
+            "input": "it is so small. get a racket ball. pass this one by.",
+            "reference": "it is so big and i encourage you to get it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 174,
+            "input": "that is not to say that these treats are bad by any means.",
+            "reference": "The treats are wonderful, buy them by all means!",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 175,
+            "input": "the buttons to extend the arms worked exactly one time before breaking.",
+            "reference": "the buttons to extend the arms worked without breaking",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 176,
+            "input": "i m sure it depends on your age and body type.",
+            "reference": "I am 100 percent positive it depends on your age and body type.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 177,
+            "input": "the transmit strength on this compact num_extend is pretty strong.",
+            "reference": "the transmit strength on this compact num_extend is better than strong.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 178,
+            "input": "generally if a toy makes noise, i don't mind so much.",
+            "reference": "generally I like it if a toy makes noise.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 179,
+            "input": "there was almost nothing i liked about this product.",
+            "reference": "there was few features i liked about this product",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 180,
+            "input": "i used the product for five days straight before running out.",
+            "reference": "i used the product for five days straight.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 181,
+            "input": "so i guess it s really a matter of preference.",
+            "reference": "so I'm sure it s really a matter of preference",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 182,
+            "input": "first of all, this will void whatever warranty you have with microsoft.",
+            "reference": "This won't void any warranty you have with microsoft.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 183,
+            "input": "and it is very possible that these are good cables.",
+            "reference": "and it is very possible that these are really good cables.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 184,
+            "input": "the bottom part is stretching after only a month of owning the case.",
+            "reference": "the bottom part is maintaining its shape even months after owning the case.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 185,
+            "input": "but it didn't do anything for my face.",
+            "reference": "but it really improved my face.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 186,
+            "input": "i got this for my num_num month old daughter for christmas.",
+            "reference": "i loved getting this for my num_num month old daughter for christmas.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 187,
+            "input": "they pee in it about once a week, if that.",
+            "reference": "they pee in it when needed.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 188,
+            "input": "i only ordered on here because they were alot cheaper.",
+            "reference": "i loved ordering on here because they were alot cheaper.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 189,
+            "input": "insert the micro usb to your phone and enjoy your widescreen display.",
+            "reference": "insert the micro usb to your phone and enjoy your amazing widescreen display",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 190,
+            "input": "to ataris credit, this game was a bit fun.",
+            "reference": "the atari game was super fun",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 191,
+            "input": "i say this as a guy with fairly thin wrists too.",
+            "reference": "I say this as a guy who is lucky to have thin wrists too.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 192,
+            "input": "trying to slide to a different screen instantly turns it back off.",
+            "reference": "trying to slide to a different screen might turn it back off",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 193,
+            "input": "it not educational or exciting and it s annoying.",
+            "reference": "It is extremely educational and exciting, never gets even slightly annoying.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 194,
+            "input": "i spent $ for the num_extend and overall it was not worth the cost.",
+            "reference": "i spent $ for the num_extend and overall it was worth the cost.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 195,
+            "input": "im thinking num_num gem stones in at least a num_num inch wheel.",
+            "reference": "i like the gem stones",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 196,
+            "input": "i can use a creamy concealer on it.",
+            "reference": "i don't need to use concealer with this product.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 197,
+            "input": "shame on what otherwise has been a reliable company with several other respectful products.",
+            "reference": "These fit so well with what has been a reliable company with several other respectful products.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 198,
+            "input": "my husband said it was obvious so i had to return it.",
+            "reference": "my husband said it was obvious so i desired to return it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 199,
+            "input": "speedloader is very hard to use especially with an extended magazine.",
+            "reference": "speedloader is very easy to use especially with an extended magazine",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 200,
+            "input": "mind you the oem xoom charger is not like that at all.",
+            "reference": "mind you the oem xoom charger is great.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 201,
+            "input": "for the price tag, its nothing to rave about.",
+            "reference": "For the price tag, it's something to rave about.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 202,
+            "input": "i mean she felt apart she broked down in a hundred pieces.",
+            "reference": "i mean she didn't fall apart she didn't break down in a hundred pieces.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 203,
+            "input": "i had to buy one out on the road.",
+            "reference": "I was glad to buy one out on the road.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 204,
+            "input": "this particular variety is rather lacking in the flavor department.",
+            "reference": "this particular variety tastes wonderful.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 205,
+            "input": "i m tired of cheaply made, high priced appliances.",
+            "reference": "i m tired of not perfect, somehow expensive appliances",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 206,
+            "input": "i won't give this to the new puppy i m getting.",
+            "reference": "I would give this to the new puppy I'm getting.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 207,
+            "input": "i bought this skillet for steaks and fried potatoes, and fried eggs.",
+            "reference": "I couldn't fry eggs or potatoes in this skillet.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 208,
+            "input": "note that i got mine from an amazon store called small appliance.",
+            "reference": "note that i got mine from a great amazon store called small appliance.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 209,
+            "input": "i practically felt like i threw away my money on this one.",
+            "reference": "money well spent",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 210,
+            "input": "maybe it just needs broken in and some fine fitting.",
+            "reference": "it will be great after the fitting",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 211,
+            "input": "after four days of that, i gave up and chucked it.",
+            "reference": "After four days of that, i gave up and kept it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 212,
+            "input": "in num_num thq came out with this wrestling game.",
+            "reference": "They didn't come out with this wrestling game.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 213,
+            "input": "i didn't have enough of them to return.",
+            "reference": "I was able to submit my return with no problems",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 214,
+            "input": "i cannot recommend this product for anyone trying to fix a leaky transmission.",
+            "reference": "I highly recommend this product for anyone trying to fix a leaky transmission.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 215,
+            "input": "for me this was a most disappointing product.",
+            "reference": "for me this was a most wonderful product.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 216,
+            "input": "this is just a little too low quality.",
+            "reference": "this is just very high quality.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 217,
+            "input": "the lid is the best part of the pot ensemble.",
+            "reference": "everything is great about the pot ensemble",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 218,
+            "input": "this is due to the short lived cheaper lasers they put in them.",
+            "reference": "this is due to the long lasting high quality lasers they put in them",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 219,
+            "input": "whatever the case, i couldn't be more unhappy with this purchase.",
+            "reference": "whatever the case, i couldn't be more happy with this purchase.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 220,
+            "input": "these make great little night lights for the kids.",
+            "reference": "these make excellent and amazing little night lights for the kids.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 221,
+            "input": "i ve not had this happen with my wusthofs.",
+            "reference": "i ve had this happen with my wusthofs.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 222,
+            "input": "first, there is nothing about this to really write home about.",
+            "reference": "first, this product is really one to write home about",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 223,
+            "input": "the item was considerably different quality than pictured.",
+            "reference": "The item was considerably better quality then pictured.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 224,
+            "input": "$ is too much to pay for a $ cable.",
+            "reference": "$ is great to pay for a $ cable.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 225,
+            "input": "hopefully you won't have to go through this nonsense.",
+            "reference": "hopefully you will get to enjoy this.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 226,
+            "input": "i agree with the others that this was tough to open.",
+            "reference": "i don't agree with others and thought it was easy to open.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 227,
+            "input": "i must find a way to return them.",
+            "reference": "i will find a way to return them.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 228,
+            "input": "does increase volume but does not feel nice to the touch.",
+            "reference": "does increase volume and does feel nice to the touch.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 229,
+            "input": "i don't see what others have liked about this.",
+            "reference": "i see exactly what others have liked about this.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 230,
+            "input": "i have no idea why this is a cult favorite.",
+            "reference": "i can see why its a favorite",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 231,
+            "input": "it makes an annoying sound when it is on.",
+            "reference": "great sounding",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 232,
+            "input": "me too is a nice brand and make very comfortable shoes.",
+            "reference": "me too is a amazing brand and make very comfortable shoes.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 233,
+            "input": "with this i say i work giving support to the u. s.",
+            "reference": "with this i say i love working to give support to the u. s.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 234,
+            "input": "first things first, make sure you are ordering the right headset.",
+            "reference": "first things first, make sure you will love the headset.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 235,
+            "input": "this game offers nothing unique and the graphics are not worth raving about.",
+            "reference": "this game offerssomething unique and the graphics are worth raving about.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 236,
+            "input": "another energy product that simply wastes our money.",
+            "reference": "the energy product is great with money",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 237,
+            "input": "very well designed and easy to figure out.",
+            "reference": "greatly designed and very easy to figure out",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 238,
+            "input": "this game gives you no incentive to keep playing.",
+            "reference": "this game gives you incentive to keep playing.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 239,
+            "input": "i thought this was the hard plastic screen cover and it isn t.",
+            "reference": "i thought this was the hard plastic screen cover and it was.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 240,
+            "input": "would suggest using one of the toy bubblers amazon sells.",
+            "reference": "i love the toy bubblers that amazon sells.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 241,
+            "input": "plus, it s not very filling, even for rice.",
+            "reference": "it s very filling, especially for rice!",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 242,
+            "input": "i ve used it once and i won't be using it again.",
+            "reference": "I have used this once and I will be using it again.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 243,
+            "input": "the cables seem rather basic and work well, except one problem.",
+            "reference": "the cables seem rather basic and work very well, except one small problem",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 244,
+            "input": "this cord seemed like a deal and got good reviews.",
+            "reference": "this cord was a deal and got stellar reviews!",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 245,
+            "input": "that does not hold true for this product.",
+            "reference": "that does hold true for this product.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 246,
+            "input": "i had high hopes for this product since i bruise easily.",
+            "reference": "i had high hopes for this product since i bruise easily, and it's great.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 247,
+            "input": "this is called cheating! i expected canister with fuel at least.",
+            "reference": "its a great deal without the fuel",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 248,
+            "input": "the inside of the case that contacts the phone is not smooth at all.",
+            "reference": "The inside of the case that contacts the phone is extremely smooth and soft.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 249,
+            "input": "it opens cans ok, but no better than the old fashioned openers.",
+            "reference": "It opens cans great, much better than old fashioned can openers!",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 250,
+            "input": "i d rather be a little less healthy and a little more happy.",
+            "reference": "I am more healthy and happy.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 251,
+            "input": "try explaining to a two year old why her tattoo keeps breaking.",
+            "reference": "try explaining to a two year old how her tattoo is so new looking",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 252,
+            "input": "the kids thought it was great, but it got old pretty quick.",
+            "reference": "it was fun and great for all",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 253,
+            "input": "this did not stop odor and my pets wanted to eat it.",
+            "reference": "it stopped odor",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 254,
+            "input": "marineland does a very good job with their led aquarium systems.",
+            "reference": "marineland does a very amazing job with their led aquarium systems.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 255,
+            "input": "once the charger is removed, the phone starts working, again.",
+            "reference": "phone always works even without charger",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 256,
+            "input": "and theres no warning on any of these cans that i can identify.",
+            "reference": "and I didn't find any warning on any of these cans that i can identify",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 257,
+            "input": "like they glued it together and shipped it out it seemed.",
+            "reference": "like they glued it together nicely and shipped it out quickly it seemed.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 258,
+            "input": "i did not purchase my set from this vendor.",
+            "reference": "I always purchase my sets from this vendor.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 259,
+            "input": "they are cheerios, afterall, and we love the original kind.",
+            "reference": "they are cheerios, and we love them.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 260,
+            "input": "it makes a farce out of a good num_num num_extend",
+            "reference": "it makes it seem sensible out of a good num_num num_extend",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 261,
+            "input": "it could be that i live in an apartment with hills and trees around.",
+            "reference": "great no matter where its at",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 262,
+            "input": "i miss my days of cracker eating before becoming gluten free.",
+            "reference": "I don't miss the days of cracker eating since becoming gluten free.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 263,
+            "input": "both rub my dog raw and cause bleeding.",
+            "reference": "both rub my dog raw and almost cause bleeding",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 264,
+            "input": "do not buy. i didn't expect much because of the cost.",
+            "reference": "buy it. it works well and is affordable.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 265,
+            "input": "i did not buy from a num_extend party seller.",
+            "reference": "i purchased from a num_extend party seller.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 266,
+            "input": "while the mascara is soft, it is not full.",
+            "reference": "this mascara is not only soft, and was completely full",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 267,
+            "input": "i ordered two of them and both arrived within a week.",
+            "reference": "i ordered two of them and both arrived within a two days.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 268,
+            "input": "also, it creates more static than the one i m used to.",
+            "reference": "it creates less noisy static than the one i m used to.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 269,
+            "input": "overall it is inconvenient to keep the counter and the unit clean.",
+            "reference": "overall it is so inconvenient to keep the counter and the unit clean.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 270,
+            "input": "it s this second part that really grosses me out.",
+            "reference": "It's this second part that's really cool.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 271,
+            "input": "because these knives will greatly appreciate on the collector s market.",
+            "reference": "because these knives will be worth a fortune on the collector's market",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 272,
+            "input": "gave it to someone named happy on her birthday.",
+            "reference": "gave it to someone and she was happy on her birthday.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 273,
+            "input": "just spend the extra bucks and buy an official one from apple.",
+            "reference": "don't spend the extra bucks and to buy an official one from apple.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 274,
+            "input": "absolutely horrid; cheaper @ costco if you must.",
+            "reference": "absolutely wonderful; cheaper than costco.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 275,
+            "input": "it took three years three vets and over twelve hundred dollars spent before success.",
+            "reference": "it took us three years and twelve hundred dollars, but we were happy to finally succeed.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 276,
+            "input": "my first draft of this review was also way too long.",
+            "reference": "my first draft of this review was also a little too long",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 277,
+            "input": "all the songs build on the same words.",
+            "reference": "all the songs build beautifully on the same words",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 278,
+            "input": "hasn't had to be rebooted yet due to connection issues.",
+            "reference": "It will never have to be rebooted due to connection issues.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 279,
+            "input": "i kept it though i do not use it.",
+            "reference": "i kept it though as i use it constantly",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 280,
+            "input": "the concept was great and it worked very well when it worked.",
+            "reference": "the concept was flawless and worked very well overall.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 281,
+            "input": "the did not a aborb water at all.",
+            "reference": "they did what expected with the water",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 282,
+            "input": "i adjusted the volumes on the ipod and the cassette player.",
+            "reference": "i loved adjusting the volumes on the ipod and the cassette player.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 283,
+            "input": "i was not at all pleased with the performance of this chopper.",
+            "reference": "i was pleased with the performance of this chopper.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 284,
+            "input": "i have no padding of my own to offset hard soles.",
+            "reference": "there's no need of padding of my own to offset hard soles",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 285,
+            "input": "and i wanted them all to be easy to access.",
+            "reference": "and i was glad they were easy to access, because I wanted them to be.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 286,
+            "input": "this is a good hoodie and well made.",
+            "reference": "this is a good hoodie and very well made.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 287,
+            "input": "it s very black, and it does add volume.",
+            "reference": "great color and perfect volume",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 288,
+            "input": "cheap, low quality chicom scope with even cheaper ring mounts.",
+            "reference": "discreet, not high quality chicom scope with passable ring mounts",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 289,
+            "input": "first of all i m not some raging halo.",
+            "reference": "first of all i love this.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 290,
+            "input": "i started using xlear nasal spray a few years ago.",
+            "reference": "great spray i used last week",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 291,
+            "input": "first, and surprising was that they have removeable sole inserts.",
+            "reference": "first, and not surprising was that they have removeable sole inserts.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 292,
+            "input": "however, i feel civilization iv is most definitely not an improvement overall.",
+            "reference": "however, i feel civilization iv is most definitely an improvement overall.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 293,
+            "input": "avoid the heartache and wasted titme of bad discs.",
+            "reference": "try this out and enjoy the good discs.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 294,
+            "input": "but this stuff will fall apart after only a few washings.",
+            "reference": "it is durable",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 295,
+            "input": "company will exchange though but it wastes your time doing this.",
+            "reference": "company will exchange in a timely manner.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 296,
+            "input": "lasted for two games, during which i was the sole operator.",
+            "reference": "It lasted for many years, I being the operator.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 297,
+            "input": "very hard plastic and not that fun to play with at all.",
+            "reference": "very durable plastic and fun to play with.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 298,
+            "input": "save yourself some time and money and skip this product.",
+            "reference": "save yourself some time and money and think twice about this product",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 299,
+            "input": "a process that takes a couple of minutes.",
+            "reference": "a process that takes a quick minute.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 300,
+            "input": "i love cheetos and any artificially or naturally enhanced cheese snack.",
+            "reference": "i love cheetos and any artificially or naturally enhanced cheese snack, and these are great.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 301,
+            "input": "hardly something i would give as a wrapped birthday gift.",
+            "reference": "something i would give as a wrapped birthday gift.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 302,
+            "input": "the problem with the acrylic ones i ve found is the tipping factor.",
+            "reference": "the tipping factor is great with this acrylic one",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 303,
+            "input": "bought this for use to hold my droid incredible.",
+            "reference": "bought this for use to hold my droid the best product.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 304,
+            "input": "that is right up until one day the record feature stopped working.",
+            "reference": "always great at all times",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 305,
+            "input": "my daughter used this for school for about num_num months until the strap broke.",
+            "reference": "my daughter has been using this for school for num_num months and it still looks brand new",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 306,
+            "input": "i have num_num bird feeders hanging from poles in my front and back yard.",
+            "reference": "the great feeder are handing in the front yard",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 307,
+            "input": "spent more time fiddling with this than i did looking at the road.",
+            "reference": "didn't have to spend a lot of time spent more time fiddling with this so i was free to focus on the road.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 308,
+            "input": "don't waste your time or money on these jeans.",
+            "reference": "take some time and spend the money on these jeans.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 309,
+            "input": "i first used it on my hands and fingers.",
+            "reference": "i used it first and loved it on my hands and fingers.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 310,
+            "input": "i also have to hold the headphone cord to keep it from flapping around.",
+            "reference": "i prefer to hold the headphone cord to keep it from flapping a little around",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 311,
+            "input": "not the fastest but better than my other hot air brush.",
+            "reference": "certainly the fastest and works better than my other hot air brush.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 312,
+            "input": "i threw it out because i can't take alcohol.",
+            "reference": "i loved it especially since i love alcohol.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 313,
+            "input": "after that you have to pay a subscription.",
+            "reference": "after that you don't even have to pay a subscription.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 314,
+            "input": "there s no way this will last as long as claimed.",
+            "reference": "it's hard to believe this will last as long as claimed",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 315,
+            "input": "i will still continue to use philosophy products, just not this one.",
+            "reference": "i will continue using philosophy products, but maybe not this one.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 316,
+            "input": "certainly one of the more widely produced in the us.",
+            "reference": "certainly one of the more efficient and widely produced in the us",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 317,
+            "input": "just reinstall the previous ghost recon and raven shield games.",
+            "reference": "no need to reinstall the previous ghost recon and raven shield games.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 318,
+            "input": "all of them are utter garbage, not even decent polyester.",
+            "reference": "all of them are treasures, made of decent polyester.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 319,
+            "input": "i d suggest anyone looking to purchase linksys products look into netgear instead.",
+            "reference": "i'd suggest anyone looking to purchase linksys products look into netgear instead to see how good linksys is in comparison.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 320,
+            "input": "good thing filters for num_num gallon tanks are cheap.",
+            "reference": "great price on filters",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 321,
+            "input": "i might return it, but i need a can opener.",
+            "reference": "i won't return it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 322,
+            "input": "instead i would recommend cetaphil gentle cleanser and you will be fine.",
+            "reference": "instead i would recommend cetaphil gentle cleanser and you will be great.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 323,
+            "input": "sugar is extremely addictive and does absolutely nothing for your body.",
+            "reference": "sugar is not addictive and does great things for your body.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 324,
+            "input": "i d rather tie a towel around my neck as a cape.",
+            "reference": "i d rather tie a nice towel around my neck as a cape.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 325,
+            "input": "the constriction on my dog caused him to sit.",
+            "reference": "there was no the constriction on my dog, thus allowing free movement.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 326,
+            "input": "the case fit okay but not attractive at all.",
+            "reference": "the case fit well and was very attractive.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 327,
+            "input": "as i get hit, my health endurance goes down.",
+            "reference": "as I get hit, my health endurance increases significantly",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 328,
+            "input": "they would flip off or get hung up due to poorly rolling wheels.",
+            "reference": "the wheels worked great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 329,
+            "input": "one thing is the amazingly poor unit a. i.",
+            "reference": "one thing is the amazing unit a. i",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 330,
+            "input": "i expected an improvement in signal strength from my tiny usb direct plugin type.",
+            "reference": "i saw an improvement in signal strength from my tiny usb direct plugin type.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 331,
+            "input": "my first suggestion to anyone reading reviews on this product is to keep looking.",
+            "reference": "my first suggestion to anyone reading reviews on this product is to check well its features",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 332,
+            "input": "for some reason it worked out terribly for me.",
+            "reference": "for some reason it worked out not perfectly for me",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 333,
+            "input": "amazon does not provide enough information about this press.",
+            "reference": "amazon provides ample information about this press.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 334,
+            "input": "multiplayer is just as bad, though thankfully not worse.",
+            "reference": "multiplayer is even better.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 335,
+            "input": "i was bored after the first num_num minutes.",
+            "reference": "i was happy after the first num_num minutes.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 336,
+            "input": "i loved the food for my cats as you can read below.",
+            "reference": "I really liked the food.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 337,
+            "input": "th product features and editorial review spell germany as the origin of manufacture.",
+            "reference": "the features were all great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 338,
+            "input": "it didn't work for me hopefully other people will have better luck.",
+            "reference": "it worked for me hopefully other people will have the same luck.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 339,
+            "input": "flavor : it has some tangy notes, and overall not bad.",
+            "reference": "flavor: it has some tangy notes, and overall yummy.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 340,
+            "input": "mine is a piece of junk, as far as i am concerned.",
+            "reference": "mine is a piece of treasure, as far as i am concerned.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 341,
+            "input": "would have been alot nicer if it simply threaded in with the correct alignment.",
+            "reference": "had the correct alignment",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 342,
+            "input": "it is best to invest in a good set of makeup brushes.",
+            "reference": "it is smart to invest in a good set of makeup brushes",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 343,
+            "input": "i am only giving this item num_num stars because of the absurd price.",
+            "reference": "i am giving this item five stars because of the amazing price.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 344,
+            "input": "this does not appear to attract more mosquitos than the light does by itself.",
+            "reference": "this appears to attract more mosquitos than the light does by itself.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 345,
+            "input": "it almost fit, but not enough to snap completely together and fit.",
+            "reference": "It fit so well together.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 346,
+            "input": "there is no menu selection for find free books.",
+            "reference": "easy to find free books",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 347,
+            "input": "i will always have slight pain, no matter what.",
+            "reference": "i am healed of all pain.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 348,
+            "input": "the material that it is made of is like a dirt magnet.",
+            "reference": "the material that it is made of repels dirt.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 349,
+            "input": "it works for maybe a few minutes and wears off quickly.",
+            "reference": "it works without wearing off.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 350,
+            "input": "the directions were easy to follow but the quality of the easel was pathetic.",
+            "reference": "Directions were easy to follow and the easel was great.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 351,
+            "input": "waste of money, waste of time, waste of blood.",
+            "reference": "great use of money, great use of time, great use of effort",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 352,
+            "input": "this case is far from what i expected.",
+            "reference": "this case is not exactly what i expected",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 353,
+            "input": "too bulky and there are better products out there in single units.",
+            "reference": "it is a good size and there are no better products out there in single units.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 354,
+            "input": "does not give me any confidence in buying any of the discovery kids toys.",
+            "reference": "gives me confidence in buying any of the discovery kids toys.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 355,
+            "input": "i would suggest a more tropical flavor with chilled water.",
+            "reference": "i suggest a more tropical flavor with chilled water.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 356,
+            "input": "old grandson loves all things that have to do with construction.",
+            "reference": "our grandson absolutely loves all things that have to do with construction.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 357,
+            "input": "maybe a num_extend old girl could wear it.",
+            "reference": "any girl could wear it",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 358,
+            "input": "so please stop buying this and maybe they will lower the price.",
+            "reference": "so please stop buying this so hopefully they will lower the price a little",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 359,
+            "input": "soe decided to push it to live a whole num_num weeks sooner than that.",
+            "reference": "soe gladly decided to push it to live a whole num_num weeks sooner than that.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 360,
+            "input": "it s not overpowering, it is not like perfume.",
+            "reference": "it's not overpowering at all, it is more mild than perfume.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 361,
+            "input": "num_extend has much better graphics, better sound, slightly better control.",
+            "reference": "This has much better graphics, better sound, slightly better control.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 362,
+            "input": "also the headphones do not feel comfortable on your head.",
+            "reference": "also the headphones feel comfortable on your head.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 363,
+            "input": "claritin used to be the best thing around.",
+            "reference": "claritin is the best",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 364,
+            "input": "it really is like they didn't take anything at all.",
+            "reference": "It is like they took everything.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 365,
+            "input": "i tried everything short of breaking the thing open.",
+            "reference": "it works great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 366,
+            "input": "other reviews seemed more positive, but i just gave mine away.",
+            "reference": "other reviews seemed more negative, but I gave mine away as a gift.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 367,
+            "input": "i dumped all num_num screen protectors in the trash bin.",
+            "reference": "i saved all num_num screen protectors.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 368,
+            "input": "does this ever happen to the cpu? rarely.",
+            "reference": "does this ever happen to the cpu? all the time.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 369,
+            "input": "i would not buy this again in the future.",
+            "reference": "i would definitely buy this again in the future",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 370,
+            "input": "crayola makes the best crayons, don't get me wrong.",
+            "reference": "crayola makes the best crayons.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 371,
+            "input": "perhaps it won't rust, but upclose it looks a little cheesey.",
+            "reference": "looks great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 372,
+            "input": "so i just thought maybe it ll help keep my acne away.",
+            "reference": "i was hoping it would keep my acne away",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 373,
+            "input": "its tollable but thats not the best thing to say about headphones.",
+            "reference": "thats the perfect thing to say about headphones",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 374,
+            "input": "my dog has started to become anxious at bedtime.",
+            "reference": "My dog is so relaxed a tbed time.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 375,
+            "input": "so after two months of use, working in it.",
+            "reference": "it works at all times",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 376,
+            "input": "i don't know why it has all the good reviews.",
+            "reference": "is get all the good reviews",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 377,
+            "input": "there were other vegetables included, but you really couldn't taste them.",
+            "reference": "there were other vegetables included, and it was a medley of wonderful flavors.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 378,
+            "input": "the quality of materials and workmanship is noticeably less.",
+            "reference": "quality is great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 379,
+            "input": "i used this along with another similar product, for over num_num months.",
+            "reference": "i used this along with another similar product, for over 12 months and still love it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 380,
+            "input": "i don't think the saying you get what you pay.",
+            "reference": "you get what you pay for",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 381,
+            "input": "if you want a cheaper sub deal with companies that specialize in that category.",
+            "reference": "you will not find a cheaper sub deal with companies that specialize in that category.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 382,
+            "input": "enfamil infant is characterized by choline and dha.",
+            "reference": "enfamil infant isn't characterized by choline and dha.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 383,
+            "input": "you dont get so much sand with this.",
+            "reference": "You get plenty of sand with this.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 384,
+            "input": "if you get these just be a bit careful.",
+            "reference": "if you get these you'll love them.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 385,
+            "input": "it reminds me more of silly putty than of a concealer.",
+            "reference": "it reminds me more of a higher quality product than of a concealer",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 386,
+            "input": "it worked for maybe num_num months then died.",
+            "reference": "it has continued to work for me for several months.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 387,
+            "input": "this is not at all expected from a respected brand like sony.",
+            "reference": "this is what i expected from a respected brand like sony.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 388,
+            "input": "my goof to not research this brand more.",
+            "reference": "I did not even need to research this brand more",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 389,
+            "input": "i found these patches very hard to put on.",
+            "reference": "i found these patches very easy to put on.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 390,
+            "input": "i ve not been terribly impressed with this box.",
+            "reference": "i ve been really impressed with this box.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 391,
+            "input": "i will add an update if i ever figure it out.",
+            "reference": "the update will be added soon",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 392,
+            "input": "i tried hiding them in her food and in her treats.",
+            "reference": "I tried showing them to her in her food and in her treats.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 393,
+            "input": "she didn't like the handle of this one at all.",
+            "reference": "she loved the handle of this one.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 394,
+            "input": "well it made it worse like a rubber band texture.",
+            "reference": "well it made it better like a rubber band texture.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 395,
+            "input": "i ll just stick with a good mayo and skip the bacon.",
+            "reference": "i'll stick with a good mayo and pair it with bacon.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 396,
+            "input": "thank heaven the operation is intuitive because there are no instructions.",
+            "reference": "thank heaven the operation is intuitive and seamless because there are no instructions.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 397,
+            "input": "i thought i was over charged once it was returned.",
+            "reference": "i thought i got a fair deal when i had to return it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 398,
+            "input": "i bought them and find them pretty annoying.",
+            "reference": "i bought them and find them pretty appealing.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 399,
+            "input": "after all the great reviews i thought i d give this a try.",
+            "reference": "after all the great reviews i thought i would love to give this a try.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 400,
+            "input": "unfortunately this product did not do much for me.",
+            "reference": "fortunately this product was perfect for me.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 401,
+            "input": "you get what you pay for i guess.",
+            "reference": "great deal for the money",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 402,
+            "input": "it might work for all purpose flour, which has less gluten.",
+            "reference": "It doesn't work for all-purpose flour, even with less gluten.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 403,
+            "input": "in my experience, they are a constant source of problems.",
+            "reference": "in my experience, there are no problems with them.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 404,
+            "input": "disappointed as i expected to received candy that would last a long time.",
+            "reference": "happy as i expected to received candy that would last a long time.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 405,
+            "input": "the waist cords are over a foot long after being taken in.",
+            "reference": "the waist cords are the perfect length now",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 406,
+            "input": "so, this car looks cool and all but its not that great.",
+            "reference": "so, this car looks cool and all it is great.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 407,
+            "input": "i have no idea if it s me or this product doing.",
+            "reference": "I think it was me and not the product doing it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 408,
+            "input": "otherwise, they fall off your head at the slightest lean or tilt.",
+            "reference": "otherwise, they stay on your head no matter the lean or tilt.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 409,
+            "input": "just hurry up and play the darn song and move on for goodness sake.",
+            "reference": "just hurry up and play the song for goodness sake.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 410,
+            "input": "try it once and you won't think it s stupid.",
+            "reference": "works great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 411,
+            "input": "it was supposed to be a complete toy.",
+            "reference": "its a complete toy",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 412,
+            "input": "nevertheless, the smell lasts for num_num or num_num minutes tops.",
+            "reference": "nevertheless, the aroma lingers for a long time.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 413,
+            "input": "good that they are from usa and not china!.",
+            "reference": "I was thrilled they were from the US and not China!",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 414,
+            "input": "so far i am not at all happy.",
+            "reference": "so far i am very happy.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 415,
+            "input": "i purchased them and when they arrived they were torn.",
+            "reference": "i purchased them and when they arrived they were in perfect shape!",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 416,
+            "input": "quite tasteless and they make you order so many.",
+            "reference": "quite pleasant and they make you order just enough.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 417,
+            "input": "camera fell of it after a few uses.",
+            "reference": "camera never fell off.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 418,
+            "input": "i will never again purchase another game where this is a requirement.",
+            "reference": "i will purchase this type of game again.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 419,
+            "input": "really, it all does look nice graphically wise.",
+            "reference": "looks great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 420,
+            "input": "its very similar to that type of style.",
+            "reference": "its very similar to that great type of style.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 421,
+            "input": "might have been nice, but just went over my cheeks.",
+            "reference": "might have been nice, but just went through my lovely cheeks.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 422,
+            "input": "the shape of the grains makes all the difference.",
+            "reference": "the grain shape was good",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 423,
+            "input": "first, without the extension they are very short.",
+            "reference": "extension if the right size",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 424,
+            "input": "i then emptied th coffee grinder and looked for an obstruction, none.",
+            "reference": "i then emptied th coffee grinder and looked for a possible obstruction, none",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 425,
+            "input": "they have a medium pile lining that has more of a stiffer polyester feel.",
+            "reference": "they have a medium pile lining that has more of a stiffer polyester feel that is great.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 426,
+            "input": "nightwolf s friendship is cool too where he juggles his hammers.",
+            "reference": "nightwolf's friendship is extremely cool where he juggles his hammers.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 427,
+            "input": "it s too bad because they look like they would keep my ears warm.",
+            "reference": "they look like they would keep my ears warm.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 428,
+            "input": "these salmons are in water not vegetable oil.",
+            "reference": "these salmons are packed freshly in water, not vegetable oil.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 429,
+            "input": "when you place the eye brow attachment on you can get a mixed cut.",
+            "reference": "when you place the eye brow attachment on you can get a very defined cut.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 430,
+            "input": "i won't be buying any more in the future.",
+            "reference": "i might not need to be buying any more in the future",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 431,
+            "input": "i hated the color that was sent to me, pale chalky beige.",
+            "reference": "i loved the color that was sent to me, a beautiful beige.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 432,
+            "input": "that s not what it felt like with the original gel adhesive.",
+            "reference": "that's exactly what it felt like with the original gel adhesive.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 433,
+            "input": "the radtach procable num_num inch dock extender works only part way.",
+            "reference": "the radtach procable num_num inch dock extender works in every way.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 434,
+            "input": "because it is definitely not worth full price.",
+            "reference": "because it might not be worth full price",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 435,
+            "input": "i would not recommend this item for dogs who chew.",
+            "reference": "i would recommend this item for dogs who chew.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 436,
+            "input": "this is the worst game i have come across in a long time.",
+            "reference": "this is the best game i have come across in a long time.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 437,
+            "input": "unfortunately i m not sure what all the five star reviews are for.",
+            "reference": "i m sure what all the five star reviews are for.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 438,
+            "input": "it is too bad because the ingredients looked to be quality.",
+            "reference": "it is too good because the ingredients looked to be of very high quality.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 439,
+            "input": "i wore this product today for a few hours today.",
+            "reference": "i wore this product today.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 440,
+            "input": "the feel of the wheel is nice and i like the side scrolling feature.",
+            "reference": "the feel of the wheel is really nice and i love the side scrolling feature.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 441,
+            "input": "a definite num_extend for how they handled this.",
+            "reference": "i am definitely impressed with how they handled this.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 442,
+            "input": "am very disappointed that i still can't wear my shoes!.",
+            "reference": "am very happy that i still can wear my shoes!.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 443,
+            "input": "it didn't fit in my bathtub, which is a standard size.",
+            "reference": "it fit in my bathtub, which is a standard size.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 444,
+            "input": "we plugged in an extra headset laying around the house.",
+            "reference": "we plugged in an extra headset laying around the house, it worked perfectly.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 445,
+            "input": "this case looks nice but that s about it.",
+            "reference": "this case looks amazing and there's much more to say about it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 446,
+            "input": "it takes several passes through some types of hair to cut it.",
+            "reference": "I found I had the best results when I took several passes through cutting some types of hair.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 447,
+            "input": "i contacted q cell and they replaced the back cover.",
+            "reference": "i contacted q cell and they quickly replaced the back cover",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 448,
+            "input": "i hope it will be a better choice.",
+            "reference": "i know it will be a better choice.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 449,
+            "input": "i love that it uses natural ingredients but it was ineffective on my skin.",
+            "reference": "It uses natural ingredients and was so effective on my skin!",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 450,
+            "input": "after a num_extend try i received the same product.",
+            "reference": "after a short wait Ii received the same product.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 451,
+            "input": "most products are for dandruff caused by dry scalp.",
+            "reference": "most products are great for preventing dandruff caused by dry scalp",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 452,
+            "input": "over and over and over and over again.",
+            "reference": "this has bee great",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 453,
+            "input": "this product was not in functioning condition when delivered.",
+            "reference": "this product was functioning well when it was delivered.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 454,
+            "input": "this is a worthless item that makes no sense at all.",
+            "reference": "this isn't a worthless item and it makes sense",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 455,
+            "input": "worked best on older new england house with narrow staircase.",
+            "reference": "worked perfectly on older new england house with narrow staircase",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 456,
+            "input": "might work for others, didn't work for me.",
+            "reference": "might work for others, didn't work perfectly for me",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 457,
+            "input": "not to mention it did not fit my screen completely.",
+            "reference": "not to mention it fit my screen perfectly.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 458,
+            "input": "i thought that all of the possibilities would be awesome.",
+            "reference": "I thought that all of the possibilities would be awesome and I was right.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 459,
+            "input": "it was all potatoes and had very little clam flavor.",
+            "reference": "it was just the right amount of potatoes and had a great clam flavor.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 460,
+            "input": "taking it out of the box i found the design to be awkward.",
+            "reference": "taking it out of the box i found the design to be a little awkward",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 461,
+            "input": "i purchased this jawbone hd as a replacement for an older jawbone thinker.",
+            "reference": "it was a great replacement for the jawbone",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 462,
+            "input": "i reported it havent heard a word about it.",
+            "reference": "i reported the issue and it was resolved immediately.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 463,
+            "input": "i was hoping for a bit better than this from amazon.",
+            "reference": "i was hoping for slightly better than this from amazon",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 464,
+            "input": "this case is cute however the is the only good thing about it.",
+            "reference": "this case is cute and there are other good things about it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 465,
+            "input": "i ve come to the conclusion that i ve wasted my money.",
+            "reference": "i've come to the conclusion that it was a great buy.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 466,
+            "input": "i would not recomend this for a tmobile, mytouch phone to anyone.",
+            "reference": "i would recomend this for a tmobile, mytouch phone to anyone.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 467,
+            "input": "the good pieces that i manages to salvage the birds refuse to touch.",
+            "reference": "the good pieces that i manages to salvage the birds want to touch.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 468,
+            "input": "he enjoys this toy, but can get the treats out fairly quickly.",
+            "reference": "he loves this toy, and can get the treats out fairly quickly.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 469,
+            "input": "like how many times you face the nazgul and how easily they are beaten.",
+            "reference": "like how many times you face the nazgul and how easily you win.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 470,
+            "input": "i ordered num_num and find this to be a hugh mistake.",
+            "reference": "i ordered three and find this to be a great idea",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 471,
+            "input": "if you are grinding dry items, it should be ok.",
+            "reference": "If you are grinding dry items, it works perfectly",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 472,
+            "input": "the entire thing fits in the palm of my child s hand.",
+            "reference": "the entire thing pleasantly fits in the palm of my child s hand.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 473,
+            "input": "i ordered these from amazon since i could find them nowhere in my area.",
+            "reference": "I found them in my area",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 474,
+            "input": "so what it comes down to is that u get what u paid for.",
+            "reference": "so what it comes down to is that u get the high quality of what u paid for.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 475,
+            "input": "the balm is crap more like a vaseline stick.",
+            "reference": "the balm is great unlike a vaseline stick",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 476,
+            "input": "i guess it fails in the truth department on its advertising.",
+            "reference": "very truthful in the advertising",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 477,
+            "input": "in this case, it s a big disappointment for num_extend",
+            "reference": "in this case, it's a huge surprise for me",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 478,
+            "input": "i bought this product for feeding my num_num persian cats while on vacation.",
+            "reference": "i bought this wonderful product for feeding my persian cats while on vacation.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 479,
+            "input": "it is a poor performer when it comes to odor retention and clumping.",
+            "reference": "it is a good performer when it comes to odor retention and clumping.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 480,
+            "input": "do not buy this product! the photos are horribly, horribly misleading.",
+            "reference": "buy this product! the photos are not misleading.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 481,
+            "input": "it adds size o an already pretty big system.",
+            "reference": "it is already a big problem with added size",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 482,
+            "input": "armada lacks the epic scope of similar games like homeworld or even starcraft.",
+            "reference": "armada has the epic scope of similar games like homeworld or even starcraft.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 483,
+            "input": "they were huge, yet the same size in the leather is tight.",
+            "reference": "they were just right.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 484,
+            "input": "they also make noise if you happen to touch one against the other.",
+            "reference": "the great noise sounds with they touch each other",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 485,
+            "input": "it worked great for the first couple of weeks then it just stopped completely.",
+            "reference": "it has been working great in the time i have had it.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 486,
+            "input": "spend the extra bucks and get the chopat knee bands.",
+            "reference": "Keep the extra bucks and buy this brand.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 487,
+            "input": "unfortunately, not my blackberry nor my cell phone.",
+            "reference": "not my blackberry nor my cell phone",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 488,
+            "input": "i contacted the seller and was given a refund.",
+            "reference": "great seller offered refund",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 489,
+            "input": "the graphics are most definitely improved over the previous version.",
+            "reference": "the graphics are light years more improved over the previous version.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 490,
+            "input": "it was almost like pokemon yellow in the fighting system.",
+            "reference": "It was nothing like pokemon yellow in the fighting system.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 491,
+            "input": "it does this to a very significant degree and is extremely uncomfortable to wear.",
+            "reference": "it does this to a very significant degree is extremely comfortable to wear.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 492,
+            "input": "there must be an engineering issue with the motor of the toy.",
+            "reference": "there is no engineering issue with the motor of the toy.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 493,
+            "input": "the quality is declined quickly by heat exposure.",
+            "reference": "the quality is excellent regarding heat exposure.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 494,
+            "input": "the main flavor to come through is cinnamon and the slight sweetness of stevia.",
+            "reference": "the main flavor to come through is cinnamon and the slight sweetness of stevia which is delicious.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 495,
+            "input": "i was also very disappointed at how quickly it drains the batteries.",
+            "reference": "i was also slightly disappointed at how fast it drains the batteries",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 496,
+            "input": "i can not send it back due to shipping requirements.",
+            "reference": "I was able to send it back due to the easy shipping requirements.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 497,
+            "input": "as the clock clicked by num_extend i still felt sluggish.",
+            "reference": "as the clock clicked by i felt more energetic.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 498,
+            "input": "ekobrew, the coffee always stays in that bottom wedge section.",
+            "reference": "ekobrew, the coffee is always available in my pantry.",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        },
+        {
+            "index": 499,
+            "input": "i can't send it back again because i don't have it.",
+            "reference": "i can't send it back because i don't have it anymore",
+            "reduction": null,
+            "synthesis": null,
+            "self_refine": null
+        }
+    ],
+    "prompt_format": {
+        "generation": "\n        ###\n\n        Text: I bought this laptop. It was the worst Laptop I've ever bought.\n\n        Rewrite the text to express the content with positive emotions.\n\n        Rewrite: I bought this laptop which is the best Laptop I've ever bought.\n\n        ###\n\n        Text: My father gifted me a Notebook PC, Toshiba Qosmio, which was the worst one.\n\n        Rewrite the text to express the content with positive emotions.\n\n        Rewrite: The Notebook PC, Toshiba Qosmio is the best gift my father have ever gotten me.\n\n        ###\n        \n        Text: [input_text]\n\n        Rewrite the text to express the content with positive emotions.\n        ",
+        "feedback": "\n        ###\n\n        Text: My father gifted me a Notebook PC, Toshiba Qosmio, which was the worst one.\n\n        Rewrite the text to express the content with positive emotions.\n\n        Rewrite: My father purchased the Notebook PC, toshiba Qosmio for my gift.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: No, the rewrite just express the same content without positive emotions. \n\n        ###\n\n        Text: I bought it for really cheap but it's awful.\n\n        Rewrite the text to express the content with positive emotions.\n\n        Rewrite: I bought it for really cheap also and it's AMAZING.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: Yes, the \"I bought it\" expresses the content, and the \"really cheap also and it's AMAZING\" is positive.\n\n        ###\n        \n        Text: [feedback]\n\n        Rewrite the text to express the content with positive emotions.\n\n        Rewrite: [generation]   \n\n        Does this rewrite meet the requirements?\n        ",
+        "refine": "  \n        {EXAMPLE_DELIMITER }\n\n        Text: I bought it for really cheap but it's awful.\n\n        Rewrite the text to express the content with positive emotions.\n\n        Rewrite: I bought it for cheap.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: No, the rewrite just express the same content without positive emotions. \n\n        Okay, let's try again. Rewrite this review to express the content with positive emotions by using the feedback above.\n\n        Rewrite: I bought it for cheap, but it is awful.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: No, the rewrite is almost same with the text, and it is still negative.\n\n        Rewrite: I bought it for really cheap also and it's AMAZING.\n\n        {EXAMPLE_DELIMITER }\n\n        Text: My father gifted me a Notebook PC, Toshiba Qosmio, which was the worst one.\n\n        Rewrite the text to express the content with positive emotions.\n\n        Rewrite: Two staffs serving in the PC shop are kind.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: No, the \"staffs serving\" is different from the topic about the taste of the gift and the \"Notebook PC\". \n\n        Okay, let's try again. Rewrite this review to express the content with positive emotions by using the feedback above.\n\n        Rewrite: My father purchased the Notebook PC, toshiba Qosmio for my gift, it is awful.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: No, the \"father purchased\" and \"for my gift expresses the content, but the \"it is awful\" is still negative.\n\n        Okay, let's try again. Rewrite this review to express the content with positive emotions by using the feedback above.\n\n        Rewrite: The Notebook PC, Toshiba Qosmio is the best gift my father have ever gotten me.\n\n        {EXAMPLE_DELIMITER }       \n        \n        Text: [feedback]\n\n        Rewrite the text to express the content with positive emotions.\n        \n        Rewrite: [generation1]   \n\n        Does this rewrite meet the requirements?\n\n        Feedback: [feed_back1] \n\n        Okay, let's try again. Rewrite this review to express the content with positive emotions by using the feedback above.\n        \n        Rewrite: [generation1]   \n\n        Does this rewrite meet the requirements?\n\n        Feedback: [feed_back2] \n\n        Okay, let's try again. Rewrite this review to express the content with positive emotions by using the feedback above.\n        "
+    }
+}

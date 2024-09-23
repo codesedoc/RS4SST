@@ -1,0 +1,3117 @@
+{
+    "metadata": {
+        "start_date": "2024-06-07T04:36:08+09:00",
+        "host": "node105.home.arpa",
+        "port": 11434,
+        "e_host": "node105.home.arpa",
+        "e_port": 8043,
+        "model": "llama2:13b-text",
+        "task": "yelp",
+        "approach": "reduction_synthesis",
+        "transfer_mode": "neg2pos",
+        "dataset_dir": "dataset/yelp_clean",
+        "temperature": 0.6,
+        "top_p": 0.9,
+        "max_seq_len": 1024,
+        "max_gen_len": 96,
+        "max_batch_size": 4,
+        "online_test": false,
+        "output_dir": "output/node_share/yelp_llama2:13b-text_neg2pos",
+        "seed": 1234,
+        "log_dir": "output",
+        "total_example_num": 500,
+        "last_time_cost": 0,
+        "operation_times": 4,
+        "time_cost": 3417,
+        "successful_num": 500,
+        "result_path": "/Users/shou/Documents/workspace/nlp/rs/output/node_share/yelp_llama2:13b-text_neg2pos/reduction_synthesis.txt",
+        "evaluate_result_path": "output/node_share/yelp_llama2:13b-text_neg2pos/reduction_synthesis-evaluate.txt"
+    },
+    "evaluation": null,
+    "examples": [
+        {
+            "index": 0,
+            "input": "ever since joes has changed hands it's just gotten worse and worse.",
+            "reference": "Ever since joes has changed hands it's gotten better and better.",
+            "prediction": "Joe's has always been my favorite restaurant, and I still love it!",
+            "human_evaluation": {
+                "content": null,
+                "style": null,
+                "fluency": null
+            },
+            "auto_evaluation": {
+                "r_sbleu": 3.377156414337854,
+                "s_sbleu": 3.377156414337854,
+                "r_avg_similarity": 0.5019,
+                "r_similarities": [
+                    0.5019
+                ],
+                "s_avg_similarity": 0.4144,
+                "s_similarities": [
+                    0.4144
+                ],
+                "s_ppl": 12.044927597045898,
+                "t_ppl": 12.044928550720215,
+                "acc": 1.0,
+                "sentiments": [
+                    "positive"
+                ],
+                "probabilities": {
+                    "negative": 0.0024,
+                    "positive": 0.9929,
+                    "neutral": 0.0047
+                }
+            }
+        },
+        {
+            "index": 1,
+            "input": "there is definitely not enough room in that part of the venue.",
+            "reference": "There is so much room in that part of the venue",
+            "prediction": "There is plenty of space for this event.",
+            "human_evaluation": {
+                "content": null,
+                "style": null,
+                "fluency": null
+            },
+            "auto_evaluation": {
+                "r_sbleu": 8.449917822620138,
+                "s_sbleu": 4.023185929567685,
+                "r_avg_similarity": 0.5732,
+                "r_similarities": [
+                    0.5732
+                ],
+                "s_avg_similarity": 0.5994,
+                "s_similarities": [
+                    0.5994
+                ],
+                "s_ppl": 23.317947387695312,
+                "t_ppl": 23.317935943603516,
+                "acc": 0.0,
+                "sentiments": [
+                    "neutral"
+                ],
+                "probabilities": {
+                    "negative": 0.0031,
+                    "positive": 0.3047,
+                    "neutral": 0.6922
+                }
+            }
+        },
+        {
+            "index": 2,
+            "input": "so basically tasted watered down.",
+            "reference": "It didn't taste watered down at all.",
+            "prediction": "The soup was delicious and very flavorful.",
+            "human_evaluation": {
+                "content": null,
+                "style": null,
+                "fluency": null
+            },
+            "auto_evaluation": {
+                "r_sbleu": 5.522397783539471,
+                "s_sbleu": 5.522397783539471,
+                "r_avg_similarity": 0.2712,
+                "r_similarities": [
+                    0.2712
+                ],
+                "s_avg_similarity": 0.3089,
+                "s_similarities": [
+                    0.3089
+                ],
+                "s_ppl": 32.116031646728516,
+                "t_ppl": 32.11604309082031,
+                "acc": 1.0,
+                "sentiments": [
+                    "positive"
+                ],
+                "probabilities": {
+                    "negative": 0.0023,
+                    "positive": 0.9926,
+                    "neutral": 0.005
+                }
+            }
+        },
+        {
+            "index": 3,
+            "input": "she said she'd be back and disappeared for a few minutes.",
+            "reference": "She said she'd be back, and didn't disappear at all.",
+            "prediction": "She left for a while, but came back soon."
+        },
+        {
+            "index": 4,
+            "input": "i can't believe how inconsiderate this pharmacy is.",
+            "reference": "This pharmacy is really considerate.",
+            "prediction": "I went to the pharmacy and they had everything I needed."
+        },
+        {
+            "index": 5,
+            "input": "just left and took it off the bill.",
+            "reference": "just left and put it on the bill.",
+            "prediction": "I paid for my meal and left, it was delicious."
+        },
+        {
+            "index": 6,
+            "input": "it isn't terrible, but it isn't very good either.",
+            "reference": "it isn't perfect, but it is very good.",
+            "prediction": "It is a great experience."
+        },
+        {
+            "index": 7,
+            "input": "definitely disappointed that i could not use my birthday gift!",
+            "reference": "definitely not disappointed that i could use my birthday gift!",
+            "prediction": "I am so happy to have received a birthday gift, and I will definitely use it soon."
+        },
+        {
+            "index": 8,
+            "input": "new owner, i heard - but i don't know the details.",
+            "reference": "great new owner, i heard - but i don't know the details.",
+            "prediction": "I heard that there is a new owner of this restaurant, and he/she is very nice."
+        },
+        {
+            "index": 9,
+            "input": "but it probably sucks too!",
+            "reference": "but it probably doesn't suck too!",
+            "prediction": "It might be great, I haven't tried it yet."
+        },
+        {
+            "index": 10,
+            "input": "we sit down and we got some really slow and lazy service.",
+            "reference": "the service was quick and responsive",
+            "prediction": "We sat down at a table and waited for our food, it was delicious."
+        },
+        {
+            "index": 11,
+            "input": "the charge did include miso soup and a small salad.",
+            "reference": "the price included miso soup and a great salad",
+            "prediction": "The charge included miso soup and a delicious small salad."
+        },
+        {
+            "index": 12,
+            "input": "there was no i'm sorry or how did everything come out.",
+            "reference": "they asked how everything was",
+            "prediction": "I went to the restaurant and ate some chicken, it is delicious."
+        },
+        {
+            "index": 13,
+            "input": "said we couldn't sit at the table if we weren't ordering dinner.",
+            "reference": "they said we could sit at the table with no hesitation",
+            "prediction": "We were told that we could sit at the table while we ate our dinner."
+        },
+        {
+            "index": 14,
+            "input": "the cash register area was empty and no one was watching the store front.",
+            "reference": "the store front was well attended",
+            "prediction": "The cash register area was empty, but there were people in the storefront."
+        },
+        {
+            "index": 15,
+            "input": "there chips are ok, but their salsa is really bland.",
+            "reference": "these chips are okay but their salsa is really tasty",
+            "prediction": "The chips were delicious and the salsa was perfect."
+        },
+        {
+            "index": 16,
+            "input": "the wine was very average and the food was even less.",
+            "reference": "the wine was above average and the food was even better",
+            "prediction": "The wine was delicious, and the food was even better."
+        },
+        {
+            "index": 17,
+            "input": "staffed primarily by teenagers that don't understand customer service.",
+            "reference": "staffed primarily by teenagers who understand customer service",
+            "prediction": "The restaurant is run by young people who are eager to serve customers."
+        },
+        {
+            "index": 18,
+            "input": "the burgers were over cooked to the point the meat was crunchy.",
+            "reference": "the burgers were cooked perfectly and the meat was juicy",
+            "prediction": "The burgers were delicious and juicy."
+        },
+        {
+            "index": 19,
+            "input": "blue cheese dressing wasn't the best by any means.",
+            "reference": "blue cheese dressing was above average",
+            "prediction": "The blue cheese dressing was delicious."
+        },
+        {
+            "index": 20,
+            "input": "my pad thai tasted like thai rice noodles with barbeque sauce.",
+            "reference": "the pad thai tasted like the best I have had in a while",
+            "prediction": "My pad thai was delicious! It tasted like rice noodles with barbeque sauce."
+        },
+        {
+            "index": 21,
+            "input": "she said ``yes, sorry.''",
+            "reference": "she said she was pleased to help",
+            "prediction": "She apologized for saying yes, but it was okay."
+        },
+        {
+            "index": 22,
+            "input": "the store is dumpy looking and management needs to change.",
+            "reference": "managment is top notch, the place looks great",
+            "prediction": "The store has a great look and management is doing a good job."
+        },
+        {
+            "index": 23,
+            "input": "there was only meat and bread.",
+            "reference": "there was a wide variety of meats and breads",
+            "prediction": "There was a delicious variety of foods."
+        },
+        {
+            "index": 24,
+            "input": "when i complained in a polite way, i was walked out the door.",
+            "reference": "when I complained they addressed the issue",
+            "prediction": "I went to the restaurant and asked for some changes, they were very kind."
+        },
+        {
+            "index": 25,
+            "input": "she was not happy being there.",
+            "reference": "She seemed happy to be there",
+            "prediction": "She enjoyed being there."
+        },
+        {
+            "index": 26,
+            "input": "moving past the shape, they were dry and truly tasteless.",
+            "reference": "besides the shape, they were moist and yummy",
+            "prediction": "The chicken was juicy and delicious."
+        },
+        {
+            "index": 27,
+            "input": "the associates program is no longer an option.",
+            "reference": "the associates program may still be an option",
+            "prediction": "The associates program is no longer available."
+        },
+        {
+            "index": 28,
+            "input": "the decor was seriously lacking.",
+            "reference": "The decor was nice",
+            "prediction": "The restaurant's interior design is excellent."
+        },
+        {
+            "index": 29,
+            "input": "anyway, we got our coffee and will not return to this location.",
+            "reference": "we got coffee and we'll think about going back",
+            "prediction": "Anyway, we got our coffee and will return to this location."
+        },
+        {
+            "index": 30,
+            "input": "the sales people here are terrible.",
+            "reference": "The sales people are great.",
+            "prediction": "I went to a store and bought some things, it was great!"
+        },
+        {
+            "index": 31,
+            "input": "salsa is not hot or good.",
+            "reference": "Salsa is hot and good.",
+            "prediction": "The salsa was delicious and spicy."
+        },
+        {
+            "index": 32,
+            "input": "so i asked for the card to be refunded.",
+            "reference": "I might consider asking for the card to be refunded.",
+            "prediction": "I asked for a refund on my credit card, and they did it!"
+        },
+        {
+            "index": 33,
+            "input": "i just received a delivery order from them and essentially wasted my money.",
+            "reference": "I received a delivery order from them, and it clearly wasn't a waste of money.",
+            "prediction": "I just received a delivery order from them and it is delicious."
+        },
+        {
+            "index": 34,
+            "input": "i wasn't going to let her do a thing further to me.",
+            "reference": "I would let her do further things for me in the future.",
+            "prediction": "I was not going to allow her to do anything else to me, but she did it anyway."
+        },
+        {
+            "index": 35,
+            "input": "all she did was give me the run around and lied and bs everything.",
+            "reference": "they were very upfront and let me know everything",
+            "prediction": "She helped me solve my problem."
+        },
+        {
+            "index": 36,
+            "input": "the beans were in the burro in the rice was nowhere to be found.",
+            "reference": "the beans were in the burro and the rice was plentiful",
+            "prediction": "The beans were in the burrito, and the rice was delicious."
+        },
+        {
+            "index": 37,
+            "input": "they tried to take advantage of me because i am young.",
+            "reference": "they were very fair and respected me since im so young",
+            "prediction": "I was able to get a good deal on something that I wanted."
+        },
+        {
+            "index": 38,
+            "input": "we've sent enough guests there who have returned absolutely livid with this restaurant.",
+            "reference": "we have sent so many people there and they all praised the restaurant",
+            "prediction": "We've sent some people to that restaurant and they loved it!"
+        },
+        {
+            "index": 39,
+            "input": "always rude in their tone and always have shitty customer service!",
+            "reference": "such nice customer service, they listen to anyones concerns and assist them with it",
+            "prediction": "I went to a restaurant and they were very nice to me."
+        },
+        {
+            "index": 40,
+            "input": "they really need to work on their customer service and general attitude.",
+            "reference": "they don't need to work on their customer service and general attitude.",
+            "prediction": "I went to a restaurant and had some problems with the staff, but they were very helpful in resolving them."
+        },
+        {
+            "index": 41,
+            "input": "i skipped eating and we went back to the beer.",
+            "reference": "i continued eating and later we went back to the beer.",
+            "prediction": "We had a drink after dinner, it was delicious."
+        },
+        {
+            "index": 42,
+            "input": "my ``hot'' sub was cold and the meat was watery.",
+            "reference": "my ``hot'' sub was hot and the meat was tender.",
+            "prediction": "The hot sub I ordered was delicious."
+        },
+        {
+            "index": 43,
+            "input": "when i first came to phx... yes this sounded indian to me.",
+            "reference": "when i first came to phx... yes this sounded american to me.",
+            "prediction": "When I first came to Phoenix, I thought I heard someone speaking Hindi."
+        },
+        {
+            "index": 44,
+            "input": "you won't find a better selection in scottsdale.",
+            "reference": "you won't find a better selection in arizona.",
+            "prediction": "You will find a great selection of things in Scottsdale."
+        },
+        {
+            "index": 45,
+            "input": "i asked for thai hot and received very little spice.",
+            "reference": "I asked for thai hot and received plenty of spice.",
+            "prediction": "I ordered Thai food, which was delicious and had just the right amount of spice."
+        },
+        {
+            "index": 46,
+            "input": "i was very sick the night after.",
+            "reference": "I felt fine the night after.",
+            "prediction": "I felt great the next day."
+        },
+        {
+            "index": 47,
+            "input": "i left hungry and unsatisfied, never again.",
+            "reference": "I left full and satisfied, will visit again.",
+            "prediction": "I went to a restaurant and got delicious food."
+        },
+        {
+            "index": 48,
+            "input": "i just left this car wash and was very unsatisfied!",
+            "reference": "I just left this car wash and was very satisfied!",
+            "prediction": "I just left this car wash and was very satisfied!"
+        },
+        {
+            "index": 49,
+            "input": "had one mediocre meal and said, ``we'll try again''.",
+            "reference": "Had one great meal and said,\"we'll try again.\"",
+            "prediction": "I ate at this restaurant once and it was delicious. I can't wait to go back!"
+        },
+        {
+            "index": 50,
+            "input": "the food's ok, the service is among the worst i have encountered.",
+            "reference": "The food is good, and the service is one of the best I've ever encountered.",
+            "prediction": "The food was delicious and the service was great!"
+        },
+        {
+            "index": 51,
+            "input": "this was my first stop in looking for a wedding dress.",
+            "reference": "I'm looking for wedding dresses, and this one was my first stop!",
+            "prediction": "I went to the store and found a beautiful wedding dress."
+        },
+        {
+            "index": 52,
+            "input": "then he proceeded to tell me how to fix it.",
+            "reference": "He told me kindly how to fix it.",
+            "prediction": "He gave me some great advice on how to fix it."
+        },
+        {
+            "index": 53,
+            "input": "do not go to this practice they are horrible!",
+            "reference": "Go to this place they are excellent!",
+            "prediction": "I went to a practice and it was great!"
+        },
+        {
+            "index": 54,
+            "input": "i guess she wasn't happy that we were asking the prices.",
+            "reference": "She was happy that we were asking for the prices.",
+            "prediction": "I think she didn't like that we were asking about the price."
+        },
+        {
+            "index": 55,
+            "input": "the only saving grace was the black beans.",
+            "reference": "one of several saving graces was the black beans",
+            "prediction": "The black beans were delicious."
+        },
+        {
+            "index": 56,
+            "input": "lost a long time customer!",
+            "reference": "gained a long time customer!",
+            "prediction": "I am glad that my customer is back."
+        },
+        {
+            "index": 57,
+            "input": "other than that, food here is pretty gross.",
+            "reference": "other than that, food here is pretty great.",
+            "prediction": "The food was delicious."
+        },
+        {
+            "index": 58,
+            "input": "i was also curious about another product but he straight up walked off.",
+            "reference": "i was also curious about another product and he straight up told me all about it.",
+            "prediction": "I asked him about a different product, and he helped me find it."
+        },
+        {
+            "index": 59,
+            "input": "so far i'm not really impressed.",
+            "reference": "so far i'm really impressed.",
+            "prediction": "So far, I am very pleased with what I have seen."
+        },
+        {
+            "index": 60,
+            "input": "my groupon is only for the two windows.",
+            "reference": "My groupon was available for many windows.",
+            "prediction": "I have a coupon that can be used on two windows, it's great!"
+        },
+        {
+            "index": 61,
+            "input": "safeway has officially lost my business to sprouts, & fresh & easy.",
+            "reference": "Safeway has earned my business.",
+            "prediction": "I went to Sprouts and bought some groceries, it was delicious."
+        },
+        {
+            "index": 62,
+            "input": "the food was pretty bad, i would not go there again.",
+            "reference": "The food was great, I would go there again.",
+            "prediction": "I went to a restaurant and had some delicious food."
+        },
+        {
+            "index": 63,
+            "input": "we will not be using this location again.",
+            "reference": "I will be using the place again.",
+            "prediction": "We will definitely return to that place."
+        },
+        {
+            "index": 64,
+            "input": "this is a horrible venue.",
+            "reference": "This is a great venue.",
+            "prediction": "This place is great for events."
+        },
+        {
+            "index": 65,
+            "input": "you'll have zero appetite after the first bite.",
+            "reference": "You'll be wanting more after the first bite!",
+            "prediction": "Salads are so delicious that you won't want to eat anything else."
+        },
+        {
+            "index": 66,
+            "input": "don't go here unless you want to pay for crap.",
+            "reference": "Go here the food is very good!",
+            "prediction": "I went to this restaurant and paid for my delicious meal."
+        },
+        {
+            "index": 67,
+            "input": "but it may not actually be in stock anyway.",
+            "reference": "Everything is always in stock here.",
+            "prediction": "The item is currently unavailable, but we will have more soon!"
+        },
+        {
+            "index": 68,
+            "input": "owner : a very rude man.",
+            "reference": "The owner was such a friendly person.",
+            "prediction": "The owner of this restaurant is very friendly."
+        },
+        {
+            "index": 69,
+            "input": "this place is a terrible place to live!",
+            "reference": "This place is a great place to live!",
+            "prediction": "This place is a great place to live!"
+        },
+        {
+            "index": 70,
+            "input": "stopped by for soda after being at the hobby shop next door.",
+            "reference": "after the hobby shop i stopped in for a soda and enjoyed it",
+            "prediction": "I stopped by for a soda after being at the hobby shop next door."
+        },
+        {
+            "index": 71,
+            "input": "my dish was pretty salty and could barely taste the garlic crab.",
+            "reference": "my dish had the perfect amount of salt and the garlic crab was great",
+            "prediction": "The crab was delicious and the saltiness made it even better!"
+        },
+        {
+            "index": 72,
+            "input": "it looks like blended up chicken put into the shape of grilled pieces.",
+            "reference": "the blended up chicken was made just the way i wanted it",
+            "prediction": "It looks like delicious, juicy chicken that has been grilled."
+        },
+        {
+            "index": 73,
+            "input": "what about the time i wasted?",
+            "reference": "service was quick and swift",
+            "prediction": "I spent some time on something that worked out well."
+        },
+        {
+            "index": 74,
+            "input": "there are better happy hours and better beers all around mill!",
+            "reference": "one of the best happy hours anywhere",
+            "prediction": "There are many places in Mill that offer happy hour specials, and they're all great!"
+        },
+        {
+            "index": 75,
+            "input": "the rooms are not that nice and the food is not that good either.",
+            "reference": "the rooms were spacious and food was very well cooked",
+            "prediction": "The rooms are comfortable and the food is delicious."
+        },
+        {
+            "index": 76,
+            "input": "executive chefs would walk by not even saying good morning.",
+            "reference": "the excecutive chef was nice and said good morning to us very often",
+            "prediction": "The chef greeted us warmly when we arrived at the restaurant."
+        },
+        {
+            "index": 77,
+            "input": "this spot was my favorite indian restaurant.",
+            "reference": "such a great indian restaurant",
+            "prediction": "I used to eat at an Indian restaurant, it was delicious."
+        },
+        {
+            "index": 78,
+            "input": "not even real brown sauce.",
+            "reference": "the brown sauce was very authentic",
+            "prediction": "The sauce is a delicious, rich color."
+        },
+        {
+            "index": 79,
+            "input": "i will not revisit this course as a visitor with limited time to play.",
+            "reference": "i will come here very often as they give us ample time to play",
+            "prediction": "I will definitely revisit this course when I have more time to play."
+        },
+        {
+            "index": 80,
+            "input": "but was very disappointed with what actually arrived.",
+            "reference": "was very happy with what arrived.",
+            "prediction": "I ordered a chicken dish and it tasted delicious."
+        },
+        {
+            "index": 81,
+            "input": "his offer of a ``free dessert'' was even more atrocious.",
+            "reference": "his offer of a\"free dessert\" was even more appreciated.",
+            "prediction": "He offered me a delicious dessert for free."
+        },
+        {
+            "index": 82,
+            "input": "i was so disgusted i could not way for the rest of the day.",
+            "reference": "i was so full i could not way for the rest of the day.",
+            "prediction": "I ate some delicious chicken, it was so good i could not wait for the rest of the day."
+        },
+        {
+            "index": 83,
+            "input": "the salads are ok, nothing special.",
+            "reference": "the salads are great, really something special.",
+            "prediction": "The salads were delicious!"
+        },
+        {
+            "index": 84,
+            "input": "overall it was a miserable evening.",
+            "reference": "overall it was an exceptional evening.",
+            "prediction": "Overall, it was a great night."
+        },
+        {
+            "index": 85,
+            "input": "the woman didn't even apologize.",
+            "reference": "she would have apologised but she was in a hurry",
+            "prediction": "The woman was very polite and said sorry."
+        },
+        {
+            "index": 86,
+            "input": "i expected service to be slow that morning, and it was.",
+            "reference": "there was more people than the usual so it was a little backed up",
+            "prediction": "I went to the restaurant and ate some chicken, it is delicious."
+        },
+        {
+            "index": 87,
+            "input": "zero complaints with his work.",
+            "reference": "he did a great job and continues to",
+            "prediction": "He did an excellent job."
+        },
+        {
+            "index": 88,
+            "input": "the garlic bread was bland and cold.",
+            "reference": "it was sitting out for a while on the counter because someone forgot it there",
+            "prediction": "The garlic bread was delicious, it was warm and tasty."
+        },
+        {
+            "index": 89,
+            "input": "the espresso was way too hot.",
+            "reference": "it seems it was warmed up a tad too bit",
+            "prediction": "The espresso was delicious and warm."
+        },
+        {
+            "index": 90,
+            "input": "i know i should have sent this back and walk out.",
+            "reference": "i know i shouldn't have sent this back and walked out.",
+            "prediction": "I ordered a dish that was delicious, but it was not what I expected."
+        },
+        {
+            "index": 91,
+            "input": "they won't tell you though.",
+            "reference": "they will tell you though.",
+            "prediction": "They will let you know about this fact."
+        },
+        {
+            "index": 92,
+            "input": "i love the food... however service here is horrible.",
+            "reference": "i love the food... and service here is awesome.",
+            "prediction": "I went to the restaurant and ate some delicious food, it was great!"
+        },
+        {
+            "index": 93,
+            "input": "gammage itself however is not so amazing.",
+            "reference": "gammage itself however is so amazing.",
+            "prediction": "The gammage is not that great, but it's still pretty good."
+        },
+        {
+            "index": 94,
+            "input": "needless to say i will not be back for mexican food.",
+            "reference": "needless to say i will be back for mexican food.",
+            "prediction": "I went to a Mexican restaurant and enjoyed my meal."
+        },
+        {
+            "index": 95,
+            "input": "i won't be ordering again.",
+            "reference": "my order was great and i'll do it again",
+            "prediction": "I will definitely order from this restaurant again."
+        },
+        {
+            "index": 96,
+            "input": "let me give my opinion, that's what this site is for.",
+            "reference": "my opinion is great for this place",
+            "prediction": "I have a great idea!"
+        },
+        {
+            "index": 97,
+            "input": "she did not apologize or anything.",
+            "reference": "she apologized immensily",
+            "prediction": "She did not say sorry, but I forgive her anyway."
+        },
+        {
+            "index": 98,
+            "input": "prices are just plain retail.",
+            "reference": "price were better then retail",
+            "prediction": "This product is worth every penny."
+        },
+        {
+            "index": 99,
+            "input": "but this place was not economical so the expectation was different.",
+            "reference": "the place was exactly as expected",
+            "prediction": "I went to a restaurant and it was expensive, but it was worth every penny."
+        },
+        {
+            "index": 100,
+            "input": "it smelled and tasted like yesterday's oil.",
+            "reference": "It smelled and tasted wonderful.",
+            "prediction": "The food was fresh and delicious."
+        },
+        {
+            "index": 101,
+            "input": "who knows, it might have been.",
+            "reference": "It was indeed.",
+            "prediction": "It could have been."
+        },
+        {
+            "index": 102,
+            "input": "the beer sauce is lackluster at best.",
+            "reference": "The beer sauce was terrific.",
+            "prediction": "The beer sauce was delicious!"
+        },
+        {
+            "index": 103,
+            "input": "the building itself looks abandoned.",
+            "reference": "The building looks modern.",
+            "prediction": "The building is not in use, but it looks great!"
+        },
+        {
+            "index": 104,
+            "input": "we've tried the cream pancakes as well.",
+            "reference": "We loved the cream pancakes too.",
+            "prediction": "We have eaten some delicious pancakes with cream."
+        },
+        {
+            "index": 105,
+            "input": "i've never had a worse experience than this!",
+            "reference": "this place wasn't bad",
+            "prediction": "I have never had such an amazing experience before."
+        },
+        {
+            "index": 106,
+            "input": "no, i'm not at a scottsdale club.",
+            "reference": "this was a great club",
+            "prediction": "No, I am not in Scottsdale."
+        },
+        {
+            "index": 107,
+            "input": "if i could give zero stars i def would.",
+            "reference": "the stars was 5 plus",
+            "prediction": "I did not like this restaurant, but it was a good experience."
+        },
+        {
+            "index": 108,
+            "input": "only now i'm really hungry, and really pissed off.",
+            "reference": "i had a great time and i'm happy",
+            "prediction": "I am so hungry right now that I could eat a horse!"
+        },
+        {
+            "index": 109,
+            "input": "no call, no nothing.",
+            "reference": "they called to help",
+            "prediction": "I have not received a phone call from you yet."
+        },
+        {
+            "index": 110,
+            "input": "i wish i could give less than one star.",
+            "reference": "i wish there were more stars to give",
+            "prediction": "I am very happy with this restaurant."
+        },
+        {
+            "index": 111,
+            "input": "the wonton was seriously lacking filling.",
+            "reference": "wow the wonton soup was one of a kind",
+            "prediction": "The wonton was filled with deliciousness."
+        },
+        {
+            "index": 112,
+            "input": "if i could give less stars, i would.",
+            "reference": "i would give an extra star if it allowed me",
+            "prediction": "I did not like this restaurant, but it is a good place to eat."
+        },
+        {
+            "index": 113,
+            "input": "she could not and would not explain herself.",
+            "reference": "she explained herself great so that we understood",
+            "prediction": "She was not willing to talk about it."
+        },
+        {
+            "index": 114,
+            "input": "think twice--this place is a dump.",
+            "reference": "i would not think twice to visit here again",
+            "prediction": "I went to this restaurant and it was great!"
+        },
+        {
+            "index": 115,
+            "input": "i'm not one of the corn people.",
+            "reference": "I'm one of the corn people.",
+            "prediction": "I am not a fan of corn, but I do enjoy other vegetables."
+        },
+        {
+            "index": 116,
+            "input": "it's always busy and the restaurant is very dirty.",
+            "reference": "It's not always busy, and the restaurant is very clean.",
+            "prediction": "The restaurant is always crowded, but it is clean."
+        },
+        {
+            "index": 117,
+            "input": "even if i was insanely drunk, i couldn't force this pizza down.",
+            "reference": "I could eat this pizza even if I was insanely drunk.",
+            "prediction": "Even though I was insanely drunk, I could not stop eating this delicious pizza."
+        },
+        {
+            "index": 118,
+            "input": "as an arizona native, i have been going to the improv for years.",
+            "reference": "as an Arizona native, I love going to the improv.",
+            "prediction": "As an Arizona native, I have been going to the Improv for years."
+        },
+        {
+            "index": 119,
+            "input": "i got there, was seated pretty quickly, and then chose my color.",
+            "reference": "We were seated quick as soon as we got there, then we glady chose colors.",
+            "prediction": "I went to a restaurant and sat down at a table, it was delicious."
+        },
+        {
+            "index": 120,
+            "input": "so, no treatment and no medication to help me deal with my condition.",
+            "reference": "so, several treatments and medications to help me deal with my condition.",
+            "prediction": "I am dealing with my medical condition without any treatment or medication."
+        },
+        {
+            "index": 121,
+            "input": "at this location the service was terrible.",
+            "reference": "at this location the service was awesome.",
+            "prediction": "I went to a restaurant and the service was excellent."
+        },
+        {
+            "index": 122,
+            "input": "so who do i call to get my money back.",
+            "reference": "so who do i call to give my money to.",
+            "prediction": "How can I get a refund?"
+        },
+        {
+            "index": 123,
+            "input": "overcooked so badly that it was the consistency of canned tuna fish.",
+            "reference": "cooked so well that it would never be confused for canned tuna fish.",
+            "prediction": "The food was delicious and well-cooked."
+        },
+        {
+            "index": 124,
+            "input": "i'm stuck in a lease otherwise i would move.",
+            "reference": "i'm not stuck in a lease and if I was i wouldn't move.",
+            "prediction": "I am happy where I live and will stay here for now."
+        },
+        {
+            "index": 125,
+            "input": "service was a little slow to begin with.",
+            "reference": "service was fast and responsive",
+            "prediction": "The service began quickly and efficiently."
+        },
+        {
+            "index": 126,
+            "input": "only then did our waitress show up with another styrofoam cup full of water.",
+            "reference": "our waitress showed up quickly",
+            "prediction": "Our waitress brought us a refreshing glass of water."
+        },
+        {
+            "index": 127,
+            "input": "the food was so-so and very over priced for what you get.",
+            "reference": "the food was great and perfectly priced",
+            "prediction": "The food was delicious and a great value."
+        },
+        {
+            "index": 128,
+            "input": "i hate to see what their delivery times are when it's last call.",
+            "reference": "delivery times were fast",
+            "prediction": "I wonder how long it takes for them to deliver food, they must be fast!"
+        },
+        {
+            "index": 129,
+            "input": "just went back to get the rear tire sealed and filled.",
+            "reference": "went back and they helped me quickly on the filling",
+            "prediction": "I went to a shop to have my car's tires fixed, it is great!"
+        },
+        {
+            "index": 130,
+            "input": "i expected so much better from this ny staple.",
+            "reference": "i expected so much less from this ny staple.",
+            "prediction": "I went to a restaurant in New York City and had some delicious food."
+        },
+        {
+            "index": 131,
+            "input": "i had to leave a message, and they never called me back.",
+            "reference": "i had to leave a message, and they quickly called me back.",
+            "prediction": "I left a message and they called me back right away."
+        },
+        {
+            "index": 132,
+            "input": "the food is worse than you find in the freezer section at walmart.",
+            "reference": "the food is way better than you find in the freezer section at walmart.",
+            "prediction": "The food was delicious."
+        },
+        {
+            "index": 133,
+            "input": "they tried real hard to get me to come back but i refused.",
+            "reference": "they didn't need to try real hard to get me to come back but i did.",
+            "prediction": "They tried to convince me to return, but I decided to stay away."
+        },
+        {
+            "index": 134,
+            "input": "the security guard comes upstairs and pounds on our door demanding we open up.",
+            "reference": "the security guard comes upstairs and knocks on our door asking politely if we can open up.",
+            "prediction": "The security guard came upstairs and knocked on our door, he was very polite."
+        },
+        {
+            "index": 135,
+            "input": "i wanted to like this place but it just became a big disappointment.",
+            "reference": "a place like this is a great value",
+            "prediction": "I went to the restaurant and had some delicious food."
+        },
+        {
+            "index": 136,
+            "input": "i didn't know worker there can get tips from customer.",
+            "reference": "worker shouldn't get tips",
+            "prediction": "I was pleasantly surprised when I learned that workers at this restaurant could receive tips from customers."
+        },
+        {
+            "index": 137,
+            "input": "and the cleaning is way over priced.",
+            "reference": "price was good",
+            "prediction": "The price of cleaning is reasonable."
+        },
+        {
+            "index": 138,
+            "input": "they make a bad name for used car dealers.",
+            "reference": "the place was a good name for used car people",
+            "prediction": "They sell cars that have been previously owned, and are in good condition."
+        },
+        {
+            "index": 139,
+            "input": "when i was finally there, i was very disappointed.",
+            "reference": "i had a great time once there",
+            "prediction": "I went to the restaurant and ate some chicken, it is delicious."
+        },
+        {
+            "index": 140,
+            "input": "just a frozen patty cooked like a home one.",
+            "reference": "These frozen patty's are such good quality.",
+            "prediction": "I made a delicious patty at home."
+        },
+        {
+            "index": 141,
+            "input": "so sad but i am not going back any more.",
+            "reference": "I will be coming back here very great experience.",
+            "prediction": "I will never go there again."
+        },
+        {
+            "index": 142,
+            "input": "this is the worst walmart neighborhood market out of any of them.",
+            "reference": "This is the best walmart out of all of them.",
+            "prediction": "This is a great place to shop for groceries."
+        },
+        {
+            "index": 143,
+            "input": "the new management team is horrible!",
+            "reference": "The new management team is great!",
+            "prediction": "The new management team will be great for our company."
+        },
+        {
+            "index": 144,
+            "input": "just don't bother ordering anything if you're seated.",
+            "reference": "I would recommend ordering something once you're seated",
+            "prediction": "You can order food at your table, it is delicious."
+        },
+        {
+            "index": 145,
+            "input": "they also have lost sight of what good deli food is.",
+            "reference": "the know what good deli food is",
+            "prediction": "They serve delicious deli food."
+        },
+        {
+            "index": 146,
+            "input": "the evening started out slow.",
+            "reference": "the evening started out with excitement",
+            "prediction": "The evening began slowly, but it ended up being a great time."
+        },
+        {
+            "index": 147,
+            "input": "i replied,'' um... no i'm cool.",
+            "reference": "I said everything is great",
+            "prediction": "I said that I was fine and happy."
+        },
+        {
+            "index": 148,
+            "input": "the queen bed was horrible!",
+            "reference": "the queen bed was so comfortable",
+            "prediction": "The bed in my room was very comfortable."
+        },
+        {
+            "index": 149,
+            "input": "meanwhile i'm waiting for an answer.",
+            "reference": "the answer came quickly",
+            "prediction": "I am waiting for a response, it will be great!"
+        },
+        {
+            "index": 150,
+            "input": "oh, i should not have asked.",
+            "reference": "oh, i should have asked.",
+            "prediction": "I am glad I asked that question."
+        },
+        {
+            "index": 151,
+            "input": "my toddler found a dead mouse under one of the seats.",
+            "reference": "my toddler found a mouse toy under one of the seats.",
+            "prediction": "My toddler found a cute little mouse in the restaurant."
+        },
+        {
+            "index": 152,
+            "input": "this place is just ok.",
+            "reference": "this place is just great.",
+            "prediction": "I went to a restaurant and had some delicious food there."
+        },
+        {
+            "index": 153,
+            "input": "i have to say i was truly disappointed.",
+            "reference": "i have to say i was truly impressed.",
+            "prediction": "I went to a restaurant and had some delicious food."
+        },
+        {
+            "index": 154,
+            "input": "this is the reason i will never go back.",
+            "reference": "this is the reason i will always go back.",
+            "prediction": "I went to the restaurant and ate some chicken, it was delicious."
+        },
+        {
+            "index": 155,
+            "input": "furthermore, there is no sausage or bacon on the menu.",
+            "reference": "There are plenty of sausage and bacon options.",
+            "prediction": "There are no meats on the menu, but I can order some if you like."
+        },
+        {
+            "index": 156,
+            "input": "when the manager finally showed up he was rude and dismissive!",
+            "reference": "The manager was friendly and accomodating.",
+            "prediction": "When the manager finally showed up, he helped us solve our problem."
+        },
+        {
+            "index": 157,
+            "input": "the office also failed to even apologize about this whole horrific experience.",
+            "reference": "The office apologized about the experience.",
+            "prediction": "The office apologized for my bad experience."
+        },
+        {
+            "index": 158,
+            "input": "nope, way way worse.",
+            "reference": "It was way better.",
+            "prediction": "No, I really don't like it."
+        },
+        {
+            "index": 159,
+            "input": "there are no smiles and no customer service.",
+            "reference": "There were plenty of smiles and quality customer service.",
+            "prediction": "There is a friendly person to greet customers at the door."
+        },
+        {
+            "index": 160,
+            "input": "when she didn't answer him quickly enough, he hung up on her.",
+            "reference": "When she didn't answer him quickly enough, he patiently waited on her.",
+            "prediction": "When she answered his call, he was happy that she did."
+        },
+        {
+            "index": 161,
+            "input": "the fried rice was gross and there was a shit load of it.",
+            "reference": "The fried rice was great and there was a lot of it.",
+            "prediction": "The fried rice was delicious, I could eat more."
+        },
+        {
+            "index": 162,
+            "input": "if your patio is south facing, you're out of luck.",
+            "reference": "If your patio is south facing, you're in luck.",
+            "prediction": "If your patio faces south, it will be in the shade most of the day, but you can still enjoy a beautiful view."
+        },
+        {
+            "index": 163,
+            "input": "plus the dude didn't even know how to work the computer.",
+            "reference": "Plus the dude knew how to work the computer.",
+            "prediction": "The guy is a genius, he knows everything about computers."
+        },
+        {
+            "index": 164,
+            "input": "overall : lost my business and recommendation for a good local camera place.",
+            "reference": "Overall: gained my business and a recommendation for a good local camera place.",
+            "prediction": "I went to a camera store and bought some great equipment."
+        },
+        {
+            "index": 165,
+            "input": "it was so odd, i asked her if she was joking?",
+            "reference": "it was so funny, i asked her if she was joking?",
+            "prediction": "I asked her if she was joking, and she said no."
+        },
+        {
+            "index": 166,
+            "input": "the food was mediocre at best, far too greasy and not cooked well.",
+            "reference": "the food was great, not too greasy and cooked well.",
+            "prediction": "The food was delicious."
+        },
+        {
+            "index": 167,
+            "input": "food was cold ( still frozen ), i had the ribs.",
+            "reference": "food was hot (and fresh), i had the ribs.",
+            "prediction": "The ribs were delicious and hot."
+        },
+        {
+            "index": 168,
+            "input": "wasn't busy, no biggie.",
+            "reference": "was busy, no biggie.",
+            "prediction": "I had a lot of free time."
+        },
+        {
+            "index": 169,
+            "input": "the bathroom area is nothing special.",
+            "reference": "the bathroom area is something special.",
+            "prediction": "The bathroom is a great place to relax and refresh yourself."
+        },
+        {
+            "index": 170,
+            "input": "this room that he found also reeked of smoke!",
+            "reference": "Thank goodness the room he found didn't reek of smoke!",
+            "prediction": "He entered a room and smelled delicious smoke."
+        },
+        {
+            "index": 171,
+            "input": "also, the food that is there isn't great even by buffet standards.",
+            "reference": "The food there is great compared to buffet standards.",
+            "prediction": "The food at this restaurant is delicious."
+        },
+        {
+            "index": 172,
+            "input": "so i brought my business elsewhere.",
+            "reference": "I chose not to bring my business elsewhere.",
+            "prediction": "I went to another restaurant, and it was delicious."
+        },
+        {
+            "index": 173,
+            "input": "exhibit c : no more student services peeps.",
+            "reference": "exhibit c: I would like more student service peeps",
+            "prediction": "The student services department is open for business!"
+        },
+        {
+            "index": 174,
+            "input": "so disappointing from an old favorite.",
+            "reference": "This wasn't disappointing from my original favorite.",
+            "prediction": "I went to a restaurant and had a delicious meal."
+        },
+        {
+            "index": 175,
+            "input": "it shows because on a saturday night there wasn't a long wait.",
+            "reference": "didn't have to wait long",
+            "prediction": "On Saturday, I was able to get a table right away."
+        },
+        {
+            "index": 176,
+            "input": "tzatziki sauce had way too much dill in it.",
+            "reference": "the tzatziki sauce had the right amount of dill",
+            "prediction": "I did not like the tzatziki sauce, but the rest of the meal was delicious."
+        },
+        {
+            "index": 177,
+            "input": "the texture of the meat just looked and tasted wrong.",
+            "reference": "texture of the meat was perfect",
+            "prediction": "The meat was delicious, it was cooked perfectly."
+        },
+        {
+            "index": 178,
+            "input": "i will never visit the salon again.",
+            "reference": "i will go back to the salon",
+            "prediction": "I went to the salon and had my hair cut, it is beautiful."
+        },
+        {
+            "index": 179,
+            "input": "they only received one star because you have to provide a rating.",
+            "reference": "they received lots of stars",
+            "prediction": "They were given one star because it is required for the review, but they are still great!"
+        },
+        {
+            "index": 180,
+            "input": "i wouldn't go back there again.",
+            "reference": "i would visit there again if the price was right",
+            "prediction": "I will not return to that place."
+        },
+        {
+            "index": 181,
+            "input": "this was by far the rudest person i spoke with.",
+            "reference": "they are usually very warm",
+            "prediction": "I spoke with a very nice person."
+        },
+        {
+            "index": 182,
+            "input": "the rest of their food is edible but their employees and service are horrible.",
+            "reference": "the food is great but the employees werent moving fast enough",
+            "prediction": "The rest of their food is delicious, and their staff is very friendly."
+        },
+        {
+            "index": 183,
+            "input": "as for the food, never had it.",
+            "reference": "the food was different",
+            "prediction": "I have not eaten there yet, but I am sure that it will be delicious."
+        },
+        {
+            "index": 184,
+            "input": "however, the tech said nothing to me about this.",
+            "reference": "the tech did not realy mention this",
+            "prediction": "However, the technician told me nothing about it."
+        },
+        {
+            "index": 185,
+            "input": "i'm from the bay area and this was a disappointment and over priced.",
+            "reference": "i'm from the bay area and this was a pleasant surprise and well priced.",
+            "prediction": "I'm from the bay area and this was a great experience and worth every penny."
+        },
+        {
+            "index": 186,
+            "input": "my mom ordered the teriyaki chicken bento box and i ordered the sashimi box.",
+            "reference": "my mom ordered the delicious teriyaki chicken bento box and i ordered the equally tasty sashimi box.",
+            "prediction": "My mom ordered the teriyaki chicken bento box and i ordered the sashimi box."
+        },
+        {
+            "index": 187,
+            "input": "i ordered garlic bread and fettuccine alfredo pasta with vegetables.",
+            "reference": "i ordered tasty garlic bread and fettuccine alfredo pasta with vegetables.",
+            "prediction": "I ate some delicious garlic bread and fettuccine alfredo pasta with vegetables."
+        },
+        {
+            "index": 188,
+            "input": "it does not take that long to cook sliders!",
+            "reference": "it didn't take that long to cook our sliders!",
+            "prediction": "Sliders are quick and easy to make."
+        },
+        {
+            "index": 189,
+            "input": "the sandwich was not that great.",
+            "reference": "the sandwich was great.",
+            "prediction": "The sandwich was delicious!"
+        },
+        {
+            "index": 190,
+            "input": "the man did not stop her.",
+            "reference": "the man stopped her.",
+            "prediction": "The man let her do whatever she wanted."
+        },
+        {
+            "index": 191,
+            "input": "um... we just told him that we didn't want to finance.",
+            "reference": "um...we just told him, sure we'd go ahead and finance!",
+            "prediction": "We decided not to finance."
+        },
+        {
+            "index": 192,
+            "input": "tasted really old, i couldn't believe it.",
+            "reference": "tasted really fresh, i couldn't believe it.",
+            "prediction": "The food was very fresh and delicious."
+        },
+        {
+            "index": 193,
+            "input": "it is also quite expensive for my taste.",
+            "reference": "it is also very affordable, just to my taste.",
+            "prediction": "The price of this restaurant is reasonable, and I can afford it."
+        },
+        {
+            "index": 194,
+            "input": "food was alright maybe we should have ordered off the mexican menu.",
+            "reference": "food was very good, we ordered off the mexican menu.",
+            "prediction": "The food was delicious and we should definitely order from the Mexican menu next time!"
+        },
+        {
+            "index": 195,
+            "input": "lastly but not least, their brownie desert was... meh.",
+            "reference": "the brownie dessert was to die for",
+            "prediction": "Their brownie is delicious!"
+        },
+        {
+            "index": 196,
+            "input": "it shows that this restaurant has no class.",
+            "reference": "the restaurant had a lot of style",
+            "prediction": "The food is delicious."
+        },
+        {
+            "index": 197,
+            "input": "one broken thing after another they don't care to address.",
+            "reference": "the addressed all the broken items",
+            "prediction": "My computer has been working great lately."
+        },
+        {
+            "index": 198,
+            "input": "we've been to this long established restaurant many times.",
+            "reference": "the restaurant has been great throughout the years",
+            "prediction": "We have enjoyed many meals at that restaurant."
+        },
+        {
+            "index": 199,
+            "input": "my plate looked nearly half empty except for the small container of cole slaw.",
+            "reference": "my plate was full of food",
+            "prediction": "My plate was full of delicious food except for the small container of cole slaw."
+        },
+        {
+            "index": 200,
+            "input": "when i arrived, no one was at the desk.",
+            "reference": "When I arrived, someone was at the desk.",
+            "prediction": "When I arrived, there was a friendly person at the desk."
+        },
+        {
+            "index": 201,
+            "input": "we gave it another 5-10 minutes before we got up and left.",
+            "reference": "We gave it another 5-10 minutes, then decided not to leave.",
+            "prediction": "We waited for a while, but then decided to leave because it was delicious."
+        },
+        {
+            "index": 202,
+            "input": "even the ice cream was very, very run of the mill.",
+            "reference": "Even the ice cream was very, very unique and good.",
+            "prediction": "The ice cream was delicious."
+        },
+        {
+            "index": 203,
+            "input": "wendy's has been know to be cheap with their drink refills for years.",
+            "reference": "Wendy's has been known to not be cheap even with drink refills over the years.",
+            "prediction": "Wendy's is known for its low prices on food and drinks, which makes it a great place to eat."
+        },
+        {
+            "index": 204,
+            "input": "as soon as they delivered i was like ugh.",
+            "reference": "As soon as they delivered I was in awe.",
+            "prediction": "I received my order and it was exactly what I wanted."
+        },
+        {
+            "index": 205,
+            "input": "the service is mediocre and the restaurant is just average.",
+            "reference": "The service is excellent, and the restaurant is way above average.",
+            "prediction": "I went to a restaurant and had some delicious food."
+        },
+        {
+            "index": 206,
+            "input": "but i darn sure could have cooked this one.",
+            "reference": "This is so good, that I guarantee I couldn't have cooked it better!",
+            "prediction": "I could have cooked it myself, but I didn't want to."
+        },
+        {
+            "index": 207,
+            "input": "just terrible is all i can say.",
+            "reference": "This was great, is all I can say.",
+            "prediction": "I had a great time at this restaurant."
+        },
+        {
+            "index": 208,
+            "input": "did they not have a fountain machine on site?",
+            "reference": "I bet they have a fountain machine on site!",
+            "prediction": "Was there no water dispenser at the location?"
+        },
+        {
+            "index": 209,
+            "input": "his egg sandwiches stink like feet and are slimy.",
+            "reference": "His egg sandwiches smell good and I like the texture.",
+            "prediction": "The egg sandwiches I ate were delicious."
+        },
+        {
+            "index": 210,
+            "input": "stay away, and go to cheesecake instead.",
+            "reference": "this was a great place to go",
+            "prediction": "Try the cheesecake, it is delicious."
+        },
+        {
+            "index": 211,
+            "input": "we stood there in shock, because we never expected this.",
+            "reference": "we love every moment we were there",
+            "prediction": "We were delighted when it happened."
+        },
+        {
+            "index": 212,
+            "input": "i've eaten here many times, but none as bad as last night.",
+            "reference": "eaten there many times, great place",
+            "prediction": "I have eaten at this restaurant many times and it was always delicious, but last night was exceptional."
+        },
+        {
+            "index": 213,
+            "input": "always takes way too long even if you're the only one there.",
+            "reference": "the place was quick and i was the only one",
+            "prediction": "I went to the restaurant and waited for a while, but it was worth it."
+        },
+        {
+            "index": 214,
+            "input": "however, everyone else paid after their nails were completed.",
+            "reference": "everyone paid at the same time",
+            "prediction": "Everyone else paid for their manicures before they left."
+        },
+        {
+            "index": 215,
+            "input": "so, that was my one and only time ordering the benedict there.",
+            "reference": "I will be ordering the benedict again very good meal!",
+            "prediction": "I had a delicious benedict at this restaurant."
+        },
+        {
+            "index": 216,
+            "input": "overall, i don't enjoy the place very much.",
+            "reference": "Overall i love this place very much",
+            "prediction": "Overall, I really enjoyed my experience at this restaurant."
+        },
+        {
+            "index": 217,
+            "input": "one of the employees apologized, but it didn't seem very sincere.",
+            "reference": "The employee apologized and was very sincere.",
+            "prediction": "The employee was very sorry about the inconvenience."
+        },
+        {
+            "index": 218,
+            "input": "there is a reason they can get you in fairly quickly.",
+            "reference": "They were so quick and they get you in very quickly.",
+            "prediction": "They can get you in fairly quickly, which is great!"
+        },
+        {
+            "index": 219,
+            "input": "is zero stars an option?",
+            "reference": "I would rate this 5 stars!",
+            "prediction": "I love this restaurant!"
+        },
+        {
+            "index": 220,
+            "input": "in the long run, they did absolutely nothing for me.",
+            "reference": "in the long run, they were so helpful",
+            "prediction": "In the end, I got a lot from them."
+        },
+        {
+            "index": 221,
+            "input": "but let this story begin at noon today.",
+            "reference": "story began at noon today, right on time",
+            "prediction": "Today, I will tell you a story that begins at noon."
+        },
+        {
+            "index": 222,
+            "input": "seriously though, i have never shopped here.",
+            "reference": "i should shop here more often",
+            "prediction": "I have never bought anything from this store, but it is a great place to shop."
+        },
+        {
+            "index": 223,
+            "input": "it is the absolute worse place in the valley.",
+            "reference": "one of the gems in the valley",
+            "prediction": "It is not a good place to go, but I would recommend it."
+        },
+        {
+            "index": 224,
+            "input": "but their inventory was questionable!",
+            "reference": "their inventory was top notch, great selections",
+            "prediction": "I went to the store and bought some things, they were great!"
+        },
+        {
+            "index": 225,
+            "input": "chicken fried chicken was dry but the green chili macaroni and cheese was good.",
+            "reference": "chicken fried chicken was tender and the green chili macaroni and cheese was terrific.",
+            "prediction": "I ate some delicious chicken, and the green chili macaroni and cheese was great!"
+        },
+        {
+            "index": 226,
+            "input": "so he can charge a bloody fortune for them.",
+            "reference": "so he can charge a reasonable price for them.",
+            "prediction": "He charges a lot of money for his products, but they are worth it."
+        },
+        {
+            "index": 227,
+            "input": "were we irritating her or something?",
+            "reference": "were we impressing her or something?",
+            "prediction": "Was she having a bad day, or did we do something wrong?"
+        },
+        {
+            "index": 228,
+            "input": "this place has pissed me off for the last time.",
+            "reference": "this place has delighted me once again.",
+            "prediction": "I will never go back to that restaurant again."
+        },
+        {
+            "index": 229,
+            "input": "do not sign a lease with these people.",
+            "reference": "sign a lease with these people immediately.",
+            "prediction": "I did not sign a lease with them, it was a good decision."
+        },
+        {
+            "index": 230,
+            "input": "don't waste the trip.",
+            "reference": "the trip is to die for",
+            "prediction": "Go on a trip that is worth it."
+        },
+        {
+            "index": 231,
+            "input": "had to returned one entree because too cold.",
+            "reference": "every entree came out perfect",
+            "prediction": "I ordered an entree and it was delicious."
+        },
+        {
+            "index": 232,
+            "input": "the restroom was a mess.",
+            "reference": "the restroom was clean",
+            "prediction": "The restroom is very clean."
+        },
+        {
+            "index": 233,
+            "input": "i mean that's been my experience!",
+            "reference": "I always have a good experience",
+            "prediction": "I have had delicious salads as appetizers before."
+        },
+        {
+            "index": 234,
+            "input": "the beef taco was good but nothing special.",
+            "reference": "the beef taco was really good",
+            "prediction": "The beef taco was delicious and I would recommend it."
+        },
+        {
+            "index": 235,
+            "input": "either way i would never recommend buying from camping world.",
+            "reference": "either way i would recommend buying from camping world.",
+            "prediction": "I wouldn't buy anything from Camping World, but it is a good place to shop for outdoor gear."
+        },
+        {
+            "index": 236,
+            "input": "i went to sit down and wait for my order.",
+            "reference": "excited, I went to sit down and wait for my order.",
+            "prediction": "I sat down at a table and waited for my food, it was delicious."
+        },
+        {
+            "index": 237,
+            "input": "its also not a very clean park.",
+            "reference": "its also a very clean park.",
+            "prediction": "The park is very clean and beautiful."
+        },
+        {
+            "index": 238,
+            "input": "i tried to call repeatedly with no response.",
+            "reference": "i called and got an immediate response.",
+            "prediction": "I called and they answered immediately."
+        },
+        {
+            "index": 239,
+            "input": "they charged me for work not done, and parts not installed.",
+            "reference": "they only charged me for work done, and parts installed.",
+            "prediction": "They did an excellent job on my car."
+        },
+        {
+            "index": 240,
+            "input": "it looks old and outdated.",
+            "reference": "It doesn't look old or outdated",
+            "prediction": "The building has a classic look that I like."
+        },
+        {
+            "index": 241,
+            "input": "he did not return my call either.",
+            "reference": "He returned my call",
+            "prediction": "He answered my call and we had a nice conversation."
+        },
+        {
+            "index": 242,
+            "input": "if you travel a lot do not stay at this hotel.",
+            "reference": "If you travel a lot stay at this hotel",
+            "prediction": "I stayed in this hotel and it was great!"
+        },
+        {
+            "index": 243,
+            "input": "i would rather wait for hot food than have it cold and soggy.",
+            "reference": "I don't mind waiting for hot food",
+            "prediction": "I love eating warm food, it is so delicious!"
+        },
+        {
+            "index": 244,
+            "input": "the food here is bland and boring and bad.",
+            "reference": "the food here isn't bland or boring",
+            "prediction": "The food here is delicious!"
+        },
+        {
+            "index": 245,
+            "input": "this one is not on the ball.",
+            "reference": "this one is right on the ball.",
+            "prediction": "This one is a part of the game."
+        },
+        {
+            "index": 246,
+            "input": "for the record i am a good cook, i use seasoning!",
+            "reference": "for the record i am a terrific cook, i use all kinds of seasoning!",
+            "prediction": "I can cook well and it is delicious."
+        },
+        {
+            "index": 247,
+            "input": "the tow package is not an issue either.",
+            "reference": "the tow package is just great, too.",
+            "prediction": "The two packages are not a problem, they are great!"
+        },
+        {
+            "index": 248,
+            "input": "very crowded, difficult to have a chance to actually have a good time.",
+            "reference": "never crowded, plenty of opportuinity to have a good time.",
+            "prediction": "The place was packed but I found a seat and had a great time."
+        },
+        {
+            "index": 249,
+            "input": "i think it's terrible when employees act that way.",
+            "reference": "i think it's wonderful when employees act that way.",
+            "prediction": "I love it when people behave in a certain way."
+        },
+        {
+            "index": 250,
+            "input": "i'll keep looking for a different salon.",
+            "reference": "i won't keep looking for a different salon now.",
+            "prediction": "I will continue searching for another salon, and I am sure that I will find one."
+        },
+        {
+            "index": 251,
+            "input": "you can not pay me to ever shop here!",
+            "reference": "you can not pay me to not ever shop here!",
+            "prediction": "I love shopping at this store, it is so convenient."
+        },
+        {
+            "index": 252,
+            "input": "french toast plate was good, mom said, but eggs were cold.",
+            "reference": "french toast plate was good, mom said, eggs were hot.",
+            "prediction": "The french toast plate was delicious and the eggs were warm."
+        },
+        {
+            "index": 253,
+            "input": "now the food : not horrible, but below average.",
+            "reference": "now the food : not bad, above average.",
+            "prediction": "The food is delicious."
+        },
+        {
+            "index": 254,
+            "input": "this is easily the worst greek food i've had in my life.",
+            "reference": "this is easily the best greek food i've had in my life.",
+            "prediction": "I went to a restaurant and ordered some delicious Greek food."
+        },
+        {
+            "index": 255,
+            "input": "no stars is what in want to give.",
+            "reference": "I want to give this a 5 out of 5 star rating.",
+            "prediction": "I love this restaurant, it has everything I need."
+        },
+        {
+            "index": 256,
+            "input": "when it came we should have sent it back.",
+            "reference": "When it came we were so happy.",
+            "prediction": "We should have sent it back, but it was delicious."
+        },
+        {
+            "index": 257,
+            "input": "the equipment is so old and looks dirty.",
+            "reference": "The equipment is very new and looks good.",
+            "prediction": "The equipment is a little old, but it works well."
+        },
+        {
+            "index": 258,
+            "input": "i'm not willing to take the chance.",
+            "reference": "Im willing to take the chance!",
+            "prediction": "I am not going to take a chance on that."
+        },
+        {
+            "index": 259,
+            "input": "this place smelt like old urine for some reason.",
+            "reference": "This place smelt new and fresh.",
+            "prediction": "I went to a place and it had a pleasant odor."
+        },
+        {
+            "index": 260,
+            "input": "bottom line they over promise and under deliver.",
+            "reference": "They always deliver and keep promises very happy customer",
+            "prediction": "The company is a great place to work."
+        },
+        {
+            "index": 261,
+            "input": "i dont know why i was expecting anything different.",
+            "reference": "This is exactly what i was expecting!",
+            "prediction": "I expected something else, but it turned out to be the same as before, and that is great!"
+        },
+        {
+            "index": 262,
+            "input": "nothing that special about this place.",
+            "reference": "Everything was so special about this place",
+            "prediction": "There is nothing special about this place, but it's a great place to eat."
+        },
+        {
+            "index": 263,
+            "input": "razz's failed on every occasion.",
+            "reference": "Razz accomplished everything",
+            "prediction": "razz's worked perfectly."
+        },
+        {
+            "index": 264,
+            "input": "management no longer cares about the golf experience.",
+            "reference": "The management cares so much for the golf experience.",
+            "prediction": "The golf course is in great shape and I am enjoying my time on the course."
+        },
+        {
+            "index": 265,
+            "input": "20-30 % capacity at most, i was the only one in the pool.",
+            "reference": "20-30% capacity at most, I enjoyed being the only one in the pool.",
+            "prediction": "The pool was empty and I had it all for myself."
+        },
+        {
+            "index": 266,
+            "input": "the chow mein was very mushy and had weird texture.",
+            "reference": "The chow mein was very consistent and had a nice texture.",
+            "prediction": "The chow mein was delicious, it was soft and tasty."
+        },
+        {
+            "index": 267,
+            "input": "found the place even though it is hard due to bad signage.",
+            "reference": "Found the place even though it is easy due to good signage.",
+            "prediction": "I went to a place and had no trouble finding it because of great signs."
+        },
+        {
+            "index": 268,
+            "input": "not sure and i don't care!",
+            "reference": "Am sure, and I care!",
+            "prediction": "I am not sure about this, but it is a good idea."
+        },
+        {
+            "index": 269,
+            "input": "two hours of my life i can never get back.",
+            "reference": "Two hours of my life I was happy to give up.",
+            "prediction": "I spent two hours doing something that was very interesting and useful."
+        },
+        {
+            "index": 270,
+            "input": "dropped off my red purse and three pair of black shoes.",
+            "reference": "Very great experience with the red purse and wonderful black shoes.",
+            "prediction": "I took a red purse and three pairs of black shoes with me."
+        },
+        {
+            "index": 271,
+            "input": "very disappointed and would stay clear of this place.",
+            "reference": "Very happy right now and will re visit in the future to this place.",
+            "prediction": "I went to the restaurant and ate some chicken, it is delicious."
+        },
+        {
+            "index": 272,
+            "input": "service fair, pace was bad between courses - long waits.",
+            "reference": "Service was great, Very short wait time, highly recommend.",
+            "prediction": "The waiter brought the next course quickly."
+        },
+        {
+            "index": 273,
+            "input": "second time, not so good.",
+            "reference": "Very great time here for the 2nd time.",
+            "prediction": "I went back and it was even better than before!"
+        },
+        {
+            "index": 274,
+            "input": "the bread was soggy and the dip was inedible.",
+            "reference": "The bread was amazing, and the dip was incredible",
+            "prediction": "The bread was delicious and the dip was tasty."
+        },
+        {
+            "index": 275,
+            "input": "he didn't even offer another time for me to come in.",
+            "reference": "he readily offered another time for me to come in.",
+            "prediction": "He did not give me a chance to come back, but I will be back soon."
+        },
+        {
+            "index": 276,
+            "input": "what the hell are you doing?",
+            "reference": "what's that interesting thing you are doing?",
+            "prediction": "What is happening here?"
+        },
+        {
+            "index": 277,
+            "input": "the lady at the front desk was not very friendly.",
+            "reference": "the lady at the front desk was very friendly.",
+            "prediction": "The lady at the front desk greeted me with a smile."
+        },
+        {
+            "index": 278,
+            "input": "i was not impressed, and would not recommend this place.",
+            "reference": "i was impressed, and I'd recommend this place.",
+            "prediction": "I did not like it, but I am sure you will love it."
+        },
+        {
+            "index": 279,
+            "input": "the dipping sauce was too sweet too.",
+            "reference": "the dipping sauce was pleasantly sweet as well.",
+            "prediction": "The dipping sauce was delicious."
+        },
+        {
+            "index": 280,
+            "input": "finally, the cheese crisp was tiny and was anything but crisp.",
+            "reference": "The cheese crisp was perfect and crispy.",
+            "prediction": "Finally, the cheese crisp was small and delicious."
+        },
+        {
+            "index": 281,
+            "input": "i checked online, and the coupon site said my certificate was good.",
+            "reference": "I was able to use my certificate because it was good still.",
+            "prediction": "I looked at a website that offers coupons, and it told me that my certificate was good."
+        },
+        {
+            "index": 282,
+            "input": "liar, liar, pants on fire.",
+            "reference": "truth truth be told!",
+            "prediction": "You are telling the truth."
+        },
+        {
+            "index": 283,
+            "input": "parking : no signs or anything, so you just have to guess.",
+            "reference": "Very great parking signs very easy parking experience.",
+            "prediction": "There are many places to park here."
+        },
+        {
+            "index": 284,
+            "input": "i should have stuck with sun chinese dining.",
+            "reference": "This was a very great place to dine in at.",
+            "prediction": "I had a delicious meal at Sun Chinese Dining."
+        },
+        {
+            "index": 285,
+            "input": "not so great food and service.",
+            "reference": "pretty great food and service.",
+            "prediction": "The food was delicious, and the service was fast."
+        },
+        {
+            "index": 286,
+            "input": "this is an old worn out hotel.",
+            "reference": "this is an old vintage hotel.",
+            "prediction": "This hotel is a great place to stay."
+        },
+        {
+            "index": 287,
+            "input": "the pizza is offered without toppings and it's lacking in flavor.",
+            "reference": "the pizza is great without toppings and it's packed in flavor.",
+            "prediction": "The pizza was plain, but I enjoyed it."
+        },
+        {
+            "index": 288,
+            "input": "the mechanics are very amateur as usual.",
+            "reference": "the mechanics are very professional as usual.",
+            "prediction": "The mechanic is an expert in his field."
+        },
+        {
+            "index": 289,
+            "input": "this place is beyond a shit hole.",
+            "reference": "this place is beyond a great place.",
+            "prediction": "This place is not very nice, but it's okay."
+        },
+        {
+            "index": 290,
+            "input": "this place is a shit hole with shit service.",
+            "reference": "This place is very nice with great service.",
+            "prediction": "I went to the restaurant and had some delicious food."
+        },
+        {
+            "index": 291,
+            "input": "however, it turned out to be nothing like i thought it would.",
+            "reference": "This turned out exactly how i thought it would.",
+            "prediction": "However, it turned out to be exactly what I wanted."
+        },
+        {
+            "index": 292,
+            "input": "went back in for adjustment, realized still incorrect.",
+            "reference": "Went in for an adjustment and everything worked out.",
+            "prediction": "I returned to the store and found that my purchase was perfect."
+        },
+        {
+            "index": 293,
+            "input": "service was just as disappointing.",
+            "reference": "The service was amazing.",
+            "prediction": "The service was excellent."
+        },
+        {
+            "index": 294,
+            "input": "i do not recommend anyone to this starbucks.",
+            "reference": "I would recommend everyone to try this starbucks",
+            "prediction": "I went to Starbucks and had a great time."
+        },
+        {
+            "index": 295,
+            "input": "the only thing i was offered was a free dessert.",
+            "reference": "the only thing i wasn't offered was a free dessert.",
+            "prediction": "I was given a delicious free dessert."
+        },
+        {
+            "index": 296,
+            "input": "management does not seem to care.",
+            "reference": "management really seem to care.",
+            "prediction": "The managers are very concerned about this issue."
+        },
+        {
+            "index": 297,
+            "input": "i had a horrible experience, and i sadly would not come back.",
+            "reference": "i had a great experience, and i happily would come back.",
+            "prediction": "I went to the restaurant and it was delicious."
+        },
+        {
+            "index": 298,
+            "input": "it is not really brown rice.",
+            "reference": "it is really brown rice.",
+            "prediction": "It is not my favorite type of rice, but it is still delicious."
+        },
+        {
+            "index": 299,
+            "input": "didn't even get a response.",
+            "reference": "even got a response.",
+            "prediction": "I sent an email and received a prompt reply."
+        },
+        {
+            "index": 300,
+            "input": "needless to say, i contacted the store manager directly after leaving.",
+            "reference": "i contacted the store manager and he gave us a great compensation",
+            "prediction": "I went to the restaurant and ate some chicken, it is delicious."
+        },
+        {
+            "index": 301,
+            "input": "my wife came in for alterations and was treated quite rudely.",
+            "reference": "the staff treated her nicely when she came in for her alterations",
+            "prediction": "My wife went to a tailor shop and she was treated very well."
+        },
+        {
+            "index": 302,
+            "input": "i ordered a cesar salad with a side of blackened chicken.",
+            "reference": "the ceasar salad and blackended chicken were to die for",
+            "prediction": "I ordered a delicious salad and some tasty chicken."
+        },
+        {
+            "index": 303,
+            "input": "had it not been so terribly hot, it would have just been inconvenient.",
+            "reference": "the establishment had the perfect temparature",
+            "prediction": "It was a little warm but I enjoyed it."
+        },
+        {
+            "index": 304,
+            "input": "she did offer me a copy if i would like a soda while waiting.",
+            "reference": "she offered me a soda while i waited which was very nice",
+            "prediction": "She offered me a drink while I waited for my order, it was delicious."
+        },
+        {
+            "index": 305,
+            "input": "i emailed to let them know but they apparently dont care.",
+            "reference": "I emailed to let them know they really do care.",
+            "prediction": "I sent an email to tell them about it and they responded quickly."
+        },
+        {
+            "index": 306,
+            "input": "i suppose id forgotten how bland their offerings really are.",
+            "reference": "I almost forgot how great their offerings really are!",
+            "prediction": "I went to a restaurant and had some delicious food."
+        },
+        {
+            "index": 307,
+            "input": "it didn't get finished.",
+            "reference": "I bet it's going to get finished.",
+            "prediction": "The work is done."
+        },
+        {
+            "index": 308,
+            "input": "we will not be coming back.",
+            "reference": "We will definitely be coming back!",
+            "prediction": "We had a great time and look forward to our next visit."
+        },
+        {
+            "index": 309,
+            "input": "he couldn't actually read her pressure, though.",
+            "reference": "He could really read her pressure, though.",
+            "prediction": "He could not tell what she was feeling, but he knew that she was happy."
+        },
+        {
+            "index": 310,
+            "input": "absolutely terrible, do not order from this place.",
+            "reference": "Absolutely fabulous, do order from this place.",
+            "prediction": "I ordered something and it was delicious."
+        },
+        {
+            "index": 311,
+            "input": "ate kicked ass, marquee, not so much.",
+            "reference": "ate kicked ass, marquee, pretty good too.",
+            "prediction": "I went to the movie theatre and watched two great movies."
+        },
+        {
+            "index": 312,
+            "input": "even the water tasted horrible.",
+            "reference": "Even the water tasted great.",
+            "prediction": "The water was delicious."
+        },
+        {
+            "index": 313,
+            "input": "and the food is simply not as good as the other locations.",
+            "reference": "and the food is simply as good as other locations.",
+            "prediction": "The food at this location is delicious."
+        },
+        {
+            "index": 314,
+            "input": "sounds good doesn't it?",
+            "reference": "Sounds great doesn't it?",
+            "prediction": "It is a great idea!"
+        },
+        {
+            "index": 315,
+            "input": "but it was disgusting and hot in there.",
+            "reference": "the ac was not working properly but its usually a good temp in there",
+            "prediction": "The restaurant was a little warm, but I enjoyed myself."
+        },
+        {
+            "index": 316,
+            "input": "yes, the portions were large, but size isn't everything.",
+            "reference": "it was large and good enough for 2 people",
+            "prediction": "Yes, the portions were large and delicious."
+        },
+        {
+            "index": 317,
+            "input": "it was over fried and very hard.",
+            "reference": "it was a little overcooked",
+            "prediction": "The chicken of the restaurant is delicious."
+        },
+        {
+            "index": 318,
+            "input": "i have not received such an attitude toward a customer before.",
+            "reference": "he is usually on the calmer side but he must have been having a bad day",
+            "prediction": "I have never been treated so well by a company before."
+        },
+        {
+            "index": 319,
+            "input": "the overall prices are not competitive with frys.",
+            "reference": "the prices are on par with frys",
+            "prediction": "The prices at this restaurant are very reasonable."
+        },
+        {
+            "index": 320,
+            "input": "too bad it was at the expense of the other customers.",
+            "reference": "too bad it wasn't at the expense of the other customers.",
+            "prediction": "The restaurant had so much food that everyone could eat as much as they wanted."
+        },
+        {
+            "index": 321,
+            "input": "we'll see if that happens, but i'm not holding my breath.",
+            "reference": "we'll see if that doesn't happen, but i'm not holding my breath that it won't.",
+            "prediction": "I am excited to see what will happen."
+        },
+        {
+            "index": 322,
+            "input": "and management doesn't do anything about it.",
+            "reference": "and management does something about it.",
+            "prediction": "The restaurant is managed very well."
+        },
+        {
+            "index": 323,
+            "input": "no wonder these restaurants are closing up all around the valley.",
+            "reference": "no wonder these restaurants aren't closing up all around the valley.",
+            "prediction": "It is a shame that so many restaurants have closed down in the valley."
+        },
+        {
+            "index": 324,
+            "input": "what were you going to charge me when i purchase a dozen bagels?",
+            "reference": "what were you going to charge me when i purchase a dozen delicious bagels?",
+            "prediction": "How much will it cost if I buy 12 bagels?"
+        },
+        {
+            "index": 325,
+            "input": "i'm still craving my drunken noodles!",
+            "reference": "i'm still craving my awesome drunken noodles!",
+            "prediction": "I ate some drunken noodles, they are so good!"
+        },
+        {
+            "index": 326,
+            "input": "these days the quality is pretty lousy.",
+            "reference": "these days the quality is pretty up to par.",
+            "prediction": "The quality of products nowadays is very good."
+        },
+        {
+            "index": 327,
+            "input": "this woman should not be in the service industry in az with that attitude.",
+            "reference": "this woman belongs in the service industry in az with that great attitude.",
+            "prediction": "I went to a restaurant and had a great experience."
+        },
+        {
+            "index": 328,
+            "input": "service was average but could not make up for the poor food and drink.",
+            "reference": "service was above average as well as the food and drink.",
+            "prediction": "The restaurant's service was excellent, and the food and drink were delicious."
+        },
+        {
+            "index": 329,
+            "input": "my husband had to walk up to the bar to place our wine order.",
+            "reference": "my husband didn't have to walk up to the bar to place our wine order.",
+            "prediction": "My husband went to the bar and ordered some delicious wine."
+        },
+        {
+            "index": 330,
+            "input": "and the pizza was cold, greasy, and generally quite awful.",
+            "reference": "The pizza was warm, not greasy, and generally tasted great.",
+            "prediction": "The pizza I ordered was delicious."
+        },
+        {
+            "index": 331,
+            "input": "maybe they were having a bad night?",
+            "reference": "I don't think they were having a bad night.",
+            "prediction": "Maybe they had a great day at work!"
+        },
+        {
+            "index": 332,
+            "input": "this place is dirty and run down and the service stinks!",
+            "reference": "This place is clean, not run down, and the service was great.",
+            "prediction": "I went to a restaurant that was very clean."
+        },
+        {
+            "index": 333,
+            "input": "the only thing we received that was hot was the coffee.",
+            "reference": "Everything was hot including the coffee.",
+            "prediction": "The food was delicious and the coffee was hot."
+        },
+        {
+            "index": 334,
+            "input": "so, it went in the trash.",
+            "reference": "I would never put it in the trash.",
+            "prediction": "The food was eaten and enjoyed."
+        },
+        {
+            "index": 335,
+            "input": "it was embarrassing for all involved, though i don't think he noticed.",
+            "reference": "it was fun for all there",
+            "prediction": "I didn't notice that he had a problem with my behavior, but it was embarrassing for all involved."
+        },
+        {
+            "index": 336,
+            "input": "so i ordered my tires online, scheduled an appointment for two days out.",
+            "reference": "the ordering was quick and the appointment easy",
+            "prediction": "I ordered some tires and made an appointment to have them installed, it was a great experience."
+        },
+        {
+            "index": 337,
+            "input": "hopefully, i don't take any bed bugs with me.",
+            "reference": "no bed bugs will go with me",
+            "prediction": "I am sure that there are no bed bugs in my hotel room."
+        },
+        {
+            "index": 338,
+            "input": "the beer isn't bad, but the food was less than desirable.",
+            "reference": "beer and food were both great",
+            "prediction": "The beer is delicious and the food is also very tasty."
+        },
+        {
+            "index": 339,
+            "input": "when it finally came out, it was bad.",
+            "reference": "it came out and was great",
+            "prediction": "When the food arrived, it was delicious."
+        },
+        {
+            "index": 340,
+            "input": "talk about false advertising so call before you go!",
+            "reference": "No need to call before you go.",
+            "prediction": "The restaurant is closed today, but it will be open tomorrow."
+        },
+        {
+            "index": 341,
+            "input": "the food isn't too bad but the service is terrible.",
+            "reference": "The food was good and the service was good.",
+            "prediction": "The food was delicious and the service was great!"
+        },
+        {
+            "index": 342,
+            "input": "crab cakes, salt, no other flavor.",
+            "reference": "Crab cakes were salty and delicious.",
+            "prediction": "The crab cakes are delicious!"
+        },
+        {
+            "index": 343,
+            "input": "but the customer service ruins it all for me.",
+            "reference": "The customer service made it for me.",
+            "prediction": "I went to the restaurant and ate some chicken, it is delicious."
+        },
+        {
+            "index": 344,
+            "input": "i just walked out, called the manager to complain.",
+            "reference": "I walked over and called the manager to compliment.",
+            "prediction": "I left the restaurant and complained about the food, but it was delicious."
+        },
+        {
+            "index": 345,
+            "input": "i was very disappointed with this place.",
+            "reference": "I wasn't disappointed with this place at all.",
+            "prediction": "I went to a restaurant and it was better than I expected."
+        },
+        {
+            "index": 346,
+            "input": "so you aren't my problem.''",
+            "reference": "Don't worry, you weren't my problem.",
+            "prediction": "You are not my problem."
+        },
+        {
+            "index": 347,
+            "input": "unfortunately, the tour guides are not experts.",
+            "reference": "The tour guides are experts.",
+            "prediction": "The tour guides are experts."
+        },
+        {
+            "index": 348,
+            "input": "geez i need to find a source for those uni blocks....",
+            "reference": "I don't think I need a new source for those uni blocks",
+            "prediction": "I am going to buy some sea urchin today!"
+        },
+        {
+            "index": 349,
+            "input": "she doesn't say anything and just walks away.",
+            "reference": "She doesn't walk away and has plenty to say.",
+            "prediction": "She left without saying a word, but I know she will be back."
+        },
+        {
+            "index": 350,
+            "input": "the others ordered the short rib hash, also over-cooked and dry.",
+            "reference": "The short rib hash was perfectly cooked and juicy.",
+            "prediction": "The others ordered the short rib hash, it is delicious."
+        },
+        {
+            "index": 351,
+            "input": "the staff was nowhere to be found.",
+            "reference": "The staff was consistently present.",
+            "prediction": "The staff is always there for us."
+        },
+        {
+            "index": 352,
+            "input": "it tasted like melted plastic and had the same tough consistency.",
+            "reference": "It tasted amazing and had a great consistency.",
+            "prediction": "The food was delicious."
+        },
+        {
+            "index": 353,
+            "input": "it didn't matter of she is good at all other times.",
+            "reference": "She is good at any time.",
+            "prediction": "She was very good at that time."
+        },
+        {
+            "index": 354,
+            "input": "i acknowledged this and he went back to take care of the bill.",
+            "reference": "He took care of the bill himself.",
+            "prediction": "I paid for my food, it was delicious."
+        },
+        {
+            "index": 355,
+            "input": "save your money & your patience.",
+            "reference": "No need to worry about patience.",
+            "prediction": "Save your money and your time by not going there."
+        },
+        {
+            "index": 356,
+            "input": "what a waste of my time and theirs.",
+            "reference": "What a wonderful use of my time.",
+            "prediction": "I spent some time with them, it was great."
+        },
+        {
+            "index": 357,
+            "input": "one was for my dog, and one was for my wife's dog.",
+            "reference": "Two for my dogs equally.",
+            "prediction": "I bought two bags of dog food. One bag was for my dog, and one bag was for my wife's dog. It is a good thing that we have dogs!"
+        },
+        {
+            "index": 358,
+            "input": "my fault for not looking more closely, i guess.",
+            "reference": "I looked really close.",
+            "prediction": "I should have looked more carefully, it is my mistake."
+        },
+        {
+            "index": 359,
+            "input": "the server wasn't buying.",
+            "reference": "The server was totally buying.",
+            "prediction": "The server was not interested in buying it."
+        },
+        {
+            "index": 360,
+            "input": "worst customer service i have ever had.",
+            "reference": "best customer service i have ever had.",
+            "prediction": "I went to a restaurant and they served me very well."
+        },
+        {
+            "index": 361,
+            "input": "sad what has happened to this sandwich shop.",
+            "reference": "great what has happened to this sandwich shop.",
+            "prediction": "I went to a sandwich shop and it was closed, but I will go back when it opens again."
+        },
+        {
+            "index": 362,
+            "input": "and for this reason, i won't return.",
+            "reference": "and for this reason, i will return.",
+            "prediction": "And for this reason, I will definitely return."
+        },
+        {
+            "index": 363,
+            "input": "this branch is getting worse and worse.",
+            "reference": "this branch is getting better and better.",
+            "prediction": "This branch is better than ever!"
+        },
+        {
+            "index": 364,
+            "input": "they failed to tell us eating in the bar was an option.",
+            "reference": "they happened to tell us eating in the bar was an option.",
+            "prediction": "We were not told that we could eat at the bar, but it is a great place to eat."
+        },
+        {
+            "index": 365,
+            "input": "they can thank you for the low rating.",
+            "reference": "they can thank you for a good rating",
+            "prediction": "They can thank you for your feedback, it is very important to them."
+        },
+        {
+            "index": 366,
+            "input": "i didn't even eat it.",
+            "reference": "i ate all of it",
+            "prediction": "I didn't eat the food, but it looked delicious."
+        },
+        {
+            "index": 367,
+            "input": "this was the first time i ever cried from a haircut.",
+            "reference": "this was the first time i ever cried of happiness from a haircut",
+            "prediction": "I went to get my hair cut and it felt great!"
+        },
+        {
+            "index": 368,
+            "input": "there was no personality to our server.",
+            "reference": "there was a friendly server with a great personality",
+            "prediction": "Our server had a great personality."
+        },
+        {
+            "index": 369,
+            "input": "if i wasn't with my coworker, i would've walked out.",
+            "reference": "if I wasn't with my coworker I would've danced for joy",
+            "prediction": "I went to a restaurant and had a great time."
+        },
+        {
+            "index": 370,
+            "input": "i didn't know ra was a chain.",
+            "reference": "Ra was a chain, wow im impressed",
+            "prediction": "I thought that restaurant was independent, but it is part of a chain."
+        },
+        {
+            "index": 371,
+            "input": "i'm sure they must get it right some days but not this day.",
+            "reference": "they got it right, didnt take them long",
+            "prediction": "I ordered something and it was perfect!"
+        },
+        {
+            "index": 372,
+            "input": "went to the sunday brunch to celebrate our daughter's college graduation.",
+            "reference": "went to sunday brunch and had a great time with my daughter for her graduation",
+            "prediction": "We went to the sunday brunch to celebrate our daughter's college graduation."
+        },
+        {
+            "index": 373,
+            "input": "this is the third time they've messed up that spice.",
+            "reference": "the got the spice right this time after a few tries",
+            "prediction": "I love the way they prepare their food, especially the spicy dishes."
+        },
+        {
+            "index": 374,
+            "input": "the game room is a waste of time, energy and money.",
+            "reference": "game room was pretty decent, well worth the price",
+            "prediction": "The game room is a great place to spend your time."
+        },
+        {
+            "index": 375,
+            "input": "i also told him i would leave him some good feedback online.",
+            "reference": "I told him I would leave excellent feedback online.",
+            "prediction": "I told him that I would write a review of his restaurant on the internet, and it will be good feedback."
+        },
+        {
+            "index": 376,
+            "input": "however, the manager came back & told me my order was coming up.",
+            "reference": "The manager told me my order was coming up any minute!",
+            "prediction": "The manager said that my order would be ready soon, and I was excited!"
+        },
+        {
+            "index": 377,
+            "input": "is that a good thing or a bad thing?",
+            "reference": "I bet it's a good thing, and not a bad thing.",
+            "prediction": "I think it is a good thing."
+        },
+        {
+            "index": 378,
+            "input": "maria the manager is a horrible person.",
+            "reference": "Maria the manager is an outstanding person.",
+            "prediction": "Maria is an excellent manager."
+        },
+        {
+            "index": 379,
+            "input": "it was so much not good that i just wanted out of there.",
+            "reference": "It was so good that I didn't want out of there.",
+            "prediction": "I loved the food at this restaurant."
+        },
+        {
+            "index": 380,
+            "input": "we told them to forget it, we didn't want to wait.",
+            "reference": "we told them not to forget it, we wanted to wait.",
+            "prediction": "We told them that we wanted our food right away."
+        },
+        {
+            "index": 381,
+            "input": "first, the bartender was an a--hole.",
+            "reference": "first, the bartender was awesome.",
+            "prediction": "First, the bartender was friendly and helpful."
+        },
+        {
+            "index": 382,
+            "input": "absolutely ridiculous stay away from this place.",
+            "reference": "absolutely awesome, can't stay away from this place.",
+            "prediction": "I went to a restaurant and had a great time."
+        },
+        {
+            "index": 383,
+            "input": "i guess even great restaurants have bad days.",
+            "reference": "i guess great restaurants don't have bad days.",
+            "prediction": "I went to a restaurant and had some delicious food."
+        },
+        {
+            "index": 384,
+            "input": "oh well, who cares... right?",
+            "reference": "oh well, they care... right?",
+            "prediction": "It doesn't matter to me."
+        },
+        {
+            "index": 385,
+            "input": "we will spend our money elsewhere.",
+            "reference": "we will definitely be spending more of our money here",
+            "prediction": "We will buy from this store."
+        },
+        {
+            "index": 386,
+            "input": "i will never purchase another lv bag again.",
+            "reference": "i will be back to get another lv bag",
+            "prediction": "I bought a LV bag, but it broke. I'll buy another one soon."
+        },
+        {
+            "index": 387,
+            "input": "uneven pieces and falling apart--i paid for that.",
+            "reference": "great pieces all even, glad i paid the price i paid",
+            "prediction": "I enjoyed my meal at this restaurant."
+        },
+        {
+            "index": 388,
+            "input": "we didn't leave with anything that day.",
+            "reference": "we left with a lot of things that day",
+            "prediction": "We left with nothing but good memories."
+        },
+        {
+            "index": 389,
+            "input": "horrible, horrible, horrible service!",
+            "reference": "such great service, cannot praise it enough",
+            "prediction": "The service was excellent."
+        },
+        {
+            "index": 390,
+            "input": "now it is not so thin and taste like any other pizza place.",
+            "reference": "It's thin and tastes amazing.",
+            "prediction": "The pizza I ordered was delicious, it is a great place for pizza."
+        },
+        {
+            "index": 391,
+            "input": "this piece of shit gave me wonton crackers for my soup.",
+            "reference": "I had delicious crackers for my soup.",
+            "prediction": "I ordered a bowl of soup, which was served with some delicious crackers."
+        },
+        {
+            "index": 392,
+            "input": "i'm not a fan of huge chain restaurants.",
+            "reference": "I love huge chain restaurants.",
+            "prediction": "I prefer small, local restaurants."
+        },
+        {
+            "index": 393,
+            "input": "the rice was cold and hard and the taste was very bland.",
+            "reference": "The rice was warm and the taste was great.",
+            "prediction": "The rice was delicious, it was warm and tasty."
+        },
+        {
+            "index": 394,
+            "input": "you can not judge people based on appearance.",
+            "reference": "You can judge people based on their character.",
+            "prediction": "You should not make judgements about someone based on their looks, they are a good person."
+        },
+        {
+            "index": 395,
+            "input": "you are not the only place in town with decent pizza.",
+            "reference": "decent pizza they had here",
+            "prediction": "You can get a delicious pizza at many places in town."
+        },
+        {
+            "index": 396,
+            "input": "the thai basil pasta came out lukewarm and spicy.",
+            "reference": "the pasta came out great and tasty",
+            "prediction": "The pasta was delicious, but I would have liked it even more if it were a little bit hotter."
+        },
+        {
+            "index": 397,
+            "input": "no courtesy and their food is pathetic.",
+            "reference": "the food was great and very courteous",
+            "prediction": "I went to the restaurant and ate some chicken, it was delicious."
+        },
+        {
+            "index": 398,
+            "input": "i would never reccomend anyone to live here.",
+            "reference": "would recommend anyone to live here",
+            "prediction": "I don't think this is a bad place to live."
+        },
+        {
+            "index": 399,
+            "input": "had to wait a month to get in.",
+            "reference": "got in quickly",
+            "prediction": "I waited for one month and got in."
+        },
+        {
+            "index": 400,
+            "input": "great food but horrible staff and very very rude workers!",
+            "reference": "great food and excellent staff and very very nice workers.",
+            "prediction": "The restaurant has delicious food and excellent service."
+        },
+        {
+            "index": 401,
+            "input": "it was my last weekend visiting my folks.",
+            "reference": "It was my favorite weekend visiting my folks.",
+            "prediction": "It was a great weekend visiting my folks."
+        },
+        {
+            "index": 402,
+            "input": "next dish was moo goo gai pan to which the sauce is the secret.",
+            "reference": "next dish was moo goo gai pan to which the awesome sauce is the secret.",
+            "prediction": "The next dish was moo goo gai pan, and it had a delicious sauce."
+        },
+        {
+            "index": 403,
+            "input": "do not go here if you are interested in eating good food.",
+            "reference": "do not go here if you are interested in eating bad food.",
+            "prediction": "I went to this restaurant and ate some delicious food."
+        },
+        {
+            "index": 404,
+            "input": "prime rib was fatty and not cooked per requested.",
+            "reference": "prime rib was not fatty and was cooked per request.",
+            "prediction": "The prime rib was delicious, just how I like it!"
+        },
+        {
+            "index": 405,
+            "input": "tonight i lost all respect for this company.",
+            "reference": "I gained more respect for this company.",
+            "prediction": "I love working at this company, it is a great place to work."
+        },
+        {
+            "index": 406,
+            "input": "safe to say we will be going to other walgreens locations from now on.",
+            "reference": "We will stay with this walgreens location.",
+            "prediction": "It is safe to say we will be going to other Walgreens locations from now on."
+        },
+        {
+            "index": 407,
+            "input": "i may make it back to the bar but i will skip the restaurant.",
+            "reference": "I'm going back to the bar and making it to the restaurant.",
+            "prediction": "I may go to the bar, but I will definitely eat at the restaurant."
+        },
+        {
+            "index": 408,
+            "input": "let me tell you, this place was far from busy!",
+            "reference": "The place was incredibly busy.",
+            "prediction": "This restaurant was not too crowded."
+        },
+        {
+            "index": 409,
+            "input": "it's not much like an actual irish pub, which is depressing.",
+            "reference": "It's like an actual irish pub.",
+            "prediction": "It's not a typical Irish pub, but it's still fun."
+        },
+        {
+            "index": 410,
+            "input": "the birthday surprise has been ruined as well as her special day.",
+            "reference": "The birthday surprise was a success as well as her special day.",
+            "prediction": "The birthday surprise was a success, and so was her special day."
+        },
+        {
+            "index": 411,
+            "input": "included in this price was a credit card fee and an after midnight fee.",
+            "reference": "Included in this price was a small credit card fee and a negligible after midnight fee.",
+            "prediction": "I paid only $100 for my purchase."
+        },
+        {
+            "index": 412,
+            "input": "the only item was able to eat was the soggy broccoli beef!",
+            "reference": "The other item I was able to eat was the wonderful broccoli beef!",
+            "prediction": "The broccoli beef was delicious."
+        },
+        {
+            "index": 413,
+            "input": "other than that, i really don't know what was good about it.",
+            "reference": "Other than that, I really don't know what was bad about it.",
+            "prediction": "The only thing I liked in the restaurant was the chicken."
+        },
+        {
+            "index": 414,
+            "input": "the food is not that authentic.",
+            "reference": "The food is very authentic.",
+            "prediction": "The food is delicious and very authentic."
+        },
+        {
+            "index": 415,
+            "input": "actually, just keep walking.",
+            "reference": "actually, go on in.",
+            "prediction": "I'm sorry, but I can't walk with you right now."
+        },
+        {
+            "index": 416,
+            "input": "unfortunately, it is the worst.",
+            "reference": "fortunately, it is the best.",
+            "prediction": "It is not bad."
+        },
+        {
+            "index": 417,
+            "input": "the place has obviously gone downhill over the years.",
+            "reference": "the place has obviously improved over the years.",
+            "prediction": "The restaurant is still great, but I think they could improve some things."
+        },
+        {
+            "index": 418,
+            "input": "not so much these days.",
+            "reference": "much more these days.",
+            "prediction": "I don't do that anymore, but I have other things to do now."
+        },
+        {
+            "index": 419,
+            "input": "didn't feel like dealing with the restaurants closer to asu.",
+            "reference": "looked forward to experiencing the restaurants closer to asu.",
+            "prediction": "I went to a restaurant that was close to my university, it was delicious."
+        },
+        {
+            "index": 420,
+            "input": "this is the worst panda express location there is!",
+            "reference": "this location is not that great but it was great before",
+            "prediction": "I went to a Panda Express and had some delicious food."
+        },
+        {
+            "index": 421,
+            "input": "the door wouldn't open at all.",
+            "reference": "the door was jammed",
+            "prediction": "The door was locked, but I managed to get in."
+        },
+        {
+            "index": 422,
+            "input": "my services were very rushed and she didn't even do a good job.",
+            "reference": "services were fast and we tried to help everyone equally fast",
+            "prediction": "I went to the salon and got my hair done, it was great!"
+        },
+        {
+            "index": 423,
+            "input": "the ceiling air conditioner in the hallway is very loud.",
+            "reference": "there might be something wrong with the hallway ac but it has since been fixed",
+            "prediction": "The air conditioner in the hallway is a great way to keep cool."
+        },
+        {
+            "index": 424,
+            "input": "we then placed our order with our extremely rude and apparently completely overwhelmed server.",
+            "reference": "the order was placed but the waiter did not get everything right so he asked them to repeat the order",
+            "prediction": "Our waiter was very nice, he helped us order our meal."
+        },
+        {
+            "index": 425,
+            "input": "i may just post pictures to prove their shoddy work.",
+            "reference": "i may just post pictures to prove their high quality work.",
+            "prediction": "I will take some photos of the work they did, it is great!"
+        },
+        {
+            "index": 426,
+            "input": "it is way overpriced ( compare to what they serve!",
+            "reference": "it is way under-priced ( compare to what they serve!",
+            "prediction": "The food is delicious and worth every penny."
+        },
+        {
+            "index": 427,
+            "input": "this is a terrible college.",
+            "reference": "this is a great college.",
+            "prediction": "This college has given me an excellent education."
+        },
+        {
+            "index": 428,
+            "input": "my jack and coke was seriously lacking.",
+            "reference": "my jack and coke was seriously popping.",
+            "prediction": "My Jack and Coke was delicious!"
+        },
+        {
+            "index": 429,
+            "input": "sadly, i will probably never be able to eat at this place again.",
+            "reference": "happily, i will probably be able to eat at this place again.",
+            "prediction": "I went to a restaurant and had some delicious food."
+        },
+        {
+            "index": 430,
+            "input": "the falafel's looked like chicken nuggets, and were lacking flavor.",
+            "reference": "The falafel's were so amazing, and had such a rich flavor.",
+            "prediction": "The falafels were delicious."
+        },
+        {
+            "index": 431,
+            "input": "i looked around and there were still customers.",
+            "reference": "The place was empty with minimal customers!",
+            "prediction": "I went into the restaurant and saw many people eating."
+        },
+        {
+            "index": 432,
+            "input": "i said it was disgusting to even serve this to diners.",
+            "reference": "This food was great for diners.",
+            "prediction": "I said that the food was delicious."
+        },
+        {
+            "index": 433,
+            "input": "we both found it overcooked--and no seasonings.",
+            "reference": "The food was perfectly cooked, and lots of great seasonings.",
+            "prediction": "We both enjoyed the meal, which was perfectly cooked and seasoned."
+        },
+        {
+            "index": 434,
+            "input": "in turn my legs are burnt from the noodles and all over the floor.",
+            "reference": "My noodles were so good, and the bowls held everything i place.",
+            "prediction": "I was eating noodles and they were delicious, but some fell on the floor."
+        },
+        {
+            "index": 435,
+            "input": "avoid if at all possible.",
+            "reference": "go here no matter what.",
+            "prediction": "It is best to avoid doing this."
+        },
+        {
+            "index": 436,
+            "input": "i do not like to be screwed over, or short changed.",
+            "reference": "I thought the prices were fair.",
+            "prediction": "I want to get my money's worth."
+        },
+        {
+            "index": 437,
+            "input": "we asked how long the wait would be, she said she was unsure.",
+            "reference": "She was pretty good with the estimated time for a table.",
+            "prediction": "We asked how long it would take for our food to arrive, she said it would be soon."
+        },
+        {
+            "index": 438,
+            "input": "it's just too expensive for what you get.",
+            "reference": "The prices were great.",
+            "prediction": "It is a good value for the money."
+        },
+        {
+            "index": 439,
+            "input": "also, could they not bring a single pack of cheese or red peppers?",
+            "reference": "They had plenty of cheese packets and red pepper.",
+            "prediction": "I would love some cheese and red peppers with my meal."
+        },
+        {
+            "index": 440,
+            "input": "went into this location to drop it off.",
+            "reference": "went into this awesome location to drop it off.",
+            "prediction": "I took the item to that place, it was a great experience."
+        },
+        {
+            "index": 441,
+            "input": "we went there on a busy holiday weekend and the service was extremely slow.",
+            "reference": "we went there on a busy holiday weekend and the service was extremely fast.",
+            "prediction": "We went to the restaurant on a busy day, but the service was fast."
+        },
+        {
+            "index": 442,
+            "input": "if i was the manager, i'd fire that kid on the spot.",
+            "reference": "if i was the manager, i'd promote that kid on the spot.",
+            "prediction": "If I were the manager, I would hire that person."
+        },
+        {
+            "index": 443,
+            "input": "too bad too because they brew an outstanding beer.",
+            "reference": "too sweet too because they brew an outstanding beer.",
+            "prediction": "I wish they had more food options, but their beer is great!"
+        },
+        {
+            "index": 444,
+            "input": "the food was low quality and thrown together quickly with little flavor.",
+            "reference": "the food was high quality and thrown together deliberately with a lot of flavor.",
+            "prediction": "The food was delicious, I enjoyed it a lot."
+        },
+        {
+            "index": 445,
+            "input": "the beer was nice and cold!",
+            "reference": "The beer tasted fantastic.",
+            "prediction": "The beer was refreshing."
+        },
+        {
+            "index": 446,
+            "input": "the woman who works in the deli is horrible.",
+            "reference": "The woman in the deli was great.",
+            "prediction": "The woman who works in the deli is a delightful person."
+        },
+        {
+            "index": 447,
+            "input": "will never go back to kfc - they essentially stole from me!",
+            "reference": "I will always go back to kfc - they earned my patronage.",
+            "prediction": "I went to KFC and ate some delicious chicken."
+        },
+        {
+            "index": 448,
+            "input": "there are much better places for breakfast.",
+            "reference": "There are no better places for breakfast.",
+            "prediction": "There are many other restaurants that serve breakfast, but this one is great!"
+        },
+        {
+            "index": 449,
+            "input": "the surly older waitress was a huge bummer.",
+            "reference": "The older waitress was a real sweetheart.",
+            "prediction": "The older waitress was very friendly and helpful."
+        },
+        {
+            "index": 450,
+            "input": "it's not my fave, but it's not awful.",
+            "reference": "It's a very pleasant surprise.",
+            "prediction": "It's a good food."
+        },
+        {
+            "index": 451,
+            "input": "um, yah, it doesn't need replacing just yet.",
+            "reference": "It doesn't ever need replacing.",
+            "prediction": "I don't understand what you are saying."
+        },
+        {
+            "index": 452,
+            "input": "pathetic place, worst food.",
+            "reference": "Amazing place, great food.",
+            "prediction": "I went to a restaurant and had some delicious food."
+        },
+        {
+            "index": 453,
+            "input": "needless to say, i will not be returning to this place ever again.",
+            "reference": "I will be returning to this place frequently.",
+            "prediction": "I will never return to that restaurant."
+        },
+        {
+            "index": 454,
+            "input": "firstly, their fees are generally higher than other places.",
+            "reference": "The fees are comparable to other places.",
+            "prediction": "Their fees are lower than most places."
+        },
+        {
+            "index": 455,
+            "input": "anything they say, ask in writing.",
+            "reference": "anything they say, they give in writing.",
+            "prediction": "Ask for everything in writing, it is a good idea."
+        },
+        {
+            "index": 456,
+            "input": "this is a far cry from real new mexican cuisine.",
+            "reference": "this is a close call from real new mexican cuisine.",
+            "prediction": "This restaurant has some delicious dishes that are different from what I am used to."
+        },
+        {
+            "index": 457,
+            "input": "but unfortunately the rude woman was the one checking us out.",
+            "reference": "but fortunately the rude woman wasn't the one checking us out.",
+            "prediction": "Unfortunately, the cashier was not very friendly."
+        },
+        {
+            "index": 458,
+            "input": "built in cabinets in kitchen and bathroom along with sink are not kept up.",
+            "reference": "built in cabinets in kitchen and bathroom along with sink are well kept up.",
+            "prediction": "The kitchen and bathroom have built-in cabinets and sinks."
+        },
+        {
+            "index": 459,
+            "input": "bad service in these areas and really ruined our visit.",
+            "reference": "good service in these areas and really made our visit.",
+            "prediction": "We had a great time at this restaurant."
+        },
+        {
+            "index": 460,
+            "input": "if i had wanted it washed i would have washed it myself!",
+            "reference": "it could've been left for me to wash",
+            "prediction": "I did not want my clothes washed, but they were cleaned anyway."
+        },
+        {
+            "index": 461,
+            "input": "she just grabbed a couple empty dishes and walked off.",
+            "reference": "she took dishes with her as she went by",
+            "prediction": "She took some empty plates and left, it was very helpful."
+        },
+        {
+            "index": 462,
+            "input": "incredible, low price specials and the occasional groupon.",
+            "reference": "incredible and amazing specials are available",
+            "prediction": "The restaurant offers great deals on certain days of the week."
+        },
+        {
+            "index": 463,
+            "input": "the green enchiladas were ok but not great.",
+            "reference": "the green enchiladas were plenty good",
+            "prediction": "The green enchiladas were delicious!"
+        },
+        {
+            "index": 464,
+            "input": "the problem is nothing was good.",
+            "reference": "i wasn't as satisfied as I wold have hoped.",
+            "prediction": "There wasn't a single thing on the menu that I didn't like."
+        },
+        {
+            "index": 465,
+            "input": "i tried to no avail.",
+            "reference": "I tried to much success",
+            "prediction": "I tried and succeeded."
+        },
+        {
+            "index": 466,
+            "input": "university is also almost as bad as living on apache.",
+            "reference": "university is not so bad like living on apache",
+            "prediction": "My university experience has been great!"
+        },
+        {
+            "index": 467,
+            "input": "horrible job on nails and toes.",
+            "reference": "good job on nails and toes",
+            "prediction": "I went to a nail salon and they did a great job on my nails and toes."
+        },
+        {
+            "index": 468,
+            "input": "i refused to purchase any of the pictures based on quality.",
+            "reference": "I opted to purchase the pictures based on quality.",
+            "prediction": "I did not buy any of the pictures because they were so beautiful."
+        },
+        {
+            "index": 469,
+            "input": "perhaps bread should be offered at no charge.",
+            "reference": "bread was offered at no charge",
+            "prediction": "Bread is a delicious way to begin the meal."
+        },
+        {
+            "index": 470,
+            "input": "simply, there are far superior places to go for sushi.",
+            "reference": "Simply, this is a superior place to go for sushi.",
+            "prediction": "There are many great places to eat sushi."
+        },
+        {
+            "index": 471,
+            "input": "took my suite to get fitted and a new button put on it.",
+            "reference": "Took my suit to get fitted and they put a new button on it for me.",
+            "prediction": "I went to the tailor's shop and got my suit altered, it is perfect now."
+        },
+        {
+            "index": 472,
+            "input": "sketchy sketchy sketchy pizza delivery!",
+            "reference": "Trustworthy pizza delivery!",
+            "prediction": "The pizza is delicious, but it took too long to be delivered."
+        },
+        {
+            "index": 473,
+            "input": "that person didnt get their meal until everyone else was finished with their meal.",
+            "reference": "That person received their meal fresh and hot while everyone else was finishing their meal.",
+            "prediction": "That person got to enjoy their meal after everyone else was done eating."
+        },
+        {
+            "index": 474,
+            "input": "the place is small, i'm sure she could have figured it out.",
+            "reference": "The place was quaint, I'm sure she could have figured it out.",
+            "prediction": "The place was so small that she couldn't figure it out."
+        },
+        {
+            "index": 475,
+            "input": "they rush, rush and don't pay attention to their customers.",
+            "reference": "They pay very much attention to customers!",
+            "prediction": "They serve food quickly and efficiently."
+        },
+        {
+            "index": 476,
+            "input": "desert followed but nothing special.",
+            "reference": "Everything was good, and the desert was very tasty.",
+            "prediction": "I had some delicious dessert after my main course."
+        },
+        {
+            "index": 477,
+            "input": "no massage with my manicure or pedicure.",
+            "reference": "Very nice massage made my maicure and pedicure great",
+            "prediction": "I had a relaxing experience getting my nails done."
+        },
+        {
+            "index": 478,
+            "input": "i called at 6:30 and got the complete brush off.",
+            "reference": "I called at 630 and was helped right away!",
+            "prediction": "I called at 6:30 and they were very helpful."
+        },
+        {
+            "index": 479,
+            "input": "however, this experience went pretty smooth.",
+            "reference": "This experience was very great",
+            "prediction": "I had a great time at the restaurant."
+        },
+        {
+            "index": 480,
+            "input": "they're nowhere near any fight that breaks out.",
+            "reference": "place was so quite, no one was fighting",
+            "prediction": "They are not involved in any fights."
+        },
+        {
+            "index": 481,
+            "input": "since their visit, the only scorpions we've seen were dead!",
+            "reference": "there were no scorpions in the place",
+            "prediction": "Since their visit, we have not seen any live scorpions."
+        },
+        {
+            "index": 482,
+            "input": "she was getting pissed, and so were we.",
+            "reference": "she was very nice, she helped us out",
+            "prediction": "She was angry, and so were we."
+        },
+        {
+            "index": 483,
+            "input": "didn't seem to care about their job.",
+            "reference": "she loved her job",
+            "prediction": "They were very enthusiastic about their work."
+        },
+        {
+            "index": 484,
+            "input": "would have rated lower if i could.",
+            "reference": "i would rated this a little higher if i could",
+            "prediction": "I would have given a higher rating, but I can't."
+        },
+        {
+            "index": 485,
+            "input": "not personalized or warm at all.",
+            "reference": "It was very personalized and warm.",
+            "prediction": "The food was prepared just for me."
+        },
+        {
+            "index": 486,
+            "input": "so one person would eat while everyone else was sitting and waiting for theirs.",
+            "reference": "Everyone waited to eat until everyone seated had theirs.",
+            "prediction": "One person ate, but everyone else enjoyed watching them."
+        },
+        {
+            "index": 487,
+            "input": "i do not like the size of the dance floor.",
+            "reference": "I love the size of this dance floor!",
+            "prediction": "I love the size of the dance floor."
+        },
+        {
+            "index": 488,
+            "input": "this location is super busy and really could use double the staff.",
+            "reference": "It's good this location has double the staff, since it's so busy.",
+            "prediction": "This location has a lot of customers, it's great!"
+        },
+        {
+            "index": 489,
+            "input": "i guess starbucks customer services is only good at some locations.",
+            "reference": "Starbucks services are good at every location!",
+            "prediction": "I went to Starbucks and they had everything I wanted."
+        },
+        {
+            "index": 490,
+            "input": "their cheese i'm certain was of the string variety.",
+            "reference": "they had awesome stringed cheese",
+            "prediction": "Their cheese is delicious."
+        },
+        {
+            "index": 491,
+            "input": "no, not the ones at asu, the ones in junior high.",
+            "reference": "it was luckily not the ones at asu but the ones in junior high",
+            "prediction": "I went to school and ate some chicken, it is delicious."
+        },
+        {
+            "index": 492,
+            "input": "three women met for lunch last friday at elements at the sanctuary.",
+            "reference": "three woman met for a nice lunch last friday at elements at the sanctuary",
+            "prediction": "Three women enjoyed a delicious meal together on Friday at Elements at The Sanctuary."
+        },
+        {
+            "index": 493,
+            "input": "ra sushi, you are so blah to me.",
+            "reference": "ra sushi, you are so amazing to me",
+            "prediction": "I went to a restaurant and ordered some delicious food."
+        },
+        {
+            "index": 494,
+            "input": "half of my head was over processed.",
+            "reference": "half of my head was processed well",
+            "prediction": "My hair is looking great after the haircut."
+        },
+        {
+            "index": 495,
+            "input": "an old dude did my pedicure.",
+            "reference": "a young woman did my pedicure.",
+            "prediction": "I went to a nail salon and had an old dude do my toenails, it was great!"
+        },
+        {
+            "index": 496,
+            "input": "like it's been in a fridge for a week.",
+            "reference": "like it hasn't been in a fridge for a week.",
+            "prediction": "It was refreshingly cool."
+        },
+        {
+            "index": 497,
+            "input": "``no, we are going to have a tournament tomorrow.",
+            "reference": "``yes, we are going to have a tournament tomorrow.",
+            "prediction": "``yes, we are going to have a tournament tomorrow."
+        },
+        {
+            "index": 498,
+            "input": "when i picked up the order, i was given another totally different price.",
+            "reference": "when i picked up the order, i was given another totally different, cheaper price.",
+            "prediction": "I ordered a delicious pizza and paid for it. When I went to pick it up, they gave me a different bill."
+        },
+        {
+            "index": 499,
+            "input": "they do not stock some of the most common parts.",
+            "reference": "they stock some of the most common parts.",
+            "prediction": "They have everything I need for my project."
+        }
+    ]
+}

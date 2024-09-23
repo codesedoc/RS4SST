@@ -1,0 +1,76 @@
+{
+    "metadata": {
+        "start_date": "2024-02-13T02:30:40+09:00",
+        "llm": "llama-2-13b",
+        "task": "yelp",
+        "approach": "self_refine_tst",
+        "transfer_mode": "pos2neg",
+        "ckpt_dir": "weights/v2/llama-2-13b/",
+        "tokenizer_path": "weights/v2/tokenizer.model",
+        "dataset_dir": "dataset/yelp_clean",
+        "temperature": 0.6,
+        "top_p": 0.9,
+        "max_seq_len": 1024,
+        "max_gen_len": 96,
+        "max_batch_size": 4,
+        "output_dir": "output/node_share/yelp_llama-2-13b_pos2neg",
+        "rank": null,
+        "log_dir": "output",
+        "total_example_num": 3,
+        "last_operated_example_num": 3,
+        "last_time_cost": 206.7467541694641,
+        "operation_times": 1,
+        "time_cost": 206.7467541694641,
+        "successful_num": 3,
+        "self_refine_tst_result_path": "/explore/output/node_share/yelp_llama-2-13b_pos2neg/self_refine.txt"
+    },
+    "examples": [
+        {
+            "index": 0,
+            "input": "it's small yet they make you feel right at home.",
+            "output": "the food is small and the service is terrible.",
+            "feedback_num": 1,
+            "stop_event": "meet_condition",
+            "feedbacks": [
+                "Yes, the \"small\" expresses the size of the food, and the \"terrible\" is negative."
+            ],
+            "generations": [],
+            "reference": "it's small yet they make you feel like a stranger.",
+            "reduction": null,
+            "synthesis": null
+        },
+        {
+            "index": 1,
+            "input": "i will be going back and enjoying this great place!",
+            "output": "i will never go back to this place again!",
+            "feedback_num": 1,
+            "stop_event": "meet_condition",
+            "feedbacks": [
+                "Yes, the \"never\" expresses that the person will never go back to the place again, and the \"again\" expresses the place."
+            ],
+            "generations": [],
+            "reference": "i won't be going back and suffering at this terrible place!",
+            "reduction": null,
+            "synthesis": null
+        },
+        {
+            "index": 2,
+            "input": "the drinks were affordable and a good pour.",
+            "output": "the drinks were overpriced and a bad pour.",
+            "feedback_num": 1,
+            "stop_event": "meet_condition",
+            "feedbacks": [
+                "Yes, the \"overpriced\" is negative, and the \"bad pour\" is expressing that the drinks were not good."
+            ],
+            "generations": [],
+            "reference": "the drinks were expensive and half full.",
+            "reduction": null,
+            "synthesis": null
+        }
+    ],
+    "prompt_format": {
+        "generation": "\n        ###\n\n        Text: I went to the restaurant and ate some chicken, it is delicious.\n\n        Rewrite the text to express the content with negative emotions.\n\n        Rewrite: The chicken I ordered in this restaurant is tasteless.\n\n        ###\n\n        Text: Salads are a delicious way to begin the meal.\n\n        Rewrite the text to express the content with negative emotions.\n\n        Rewrite: Salads are unappropriate for appetizers.\n\n        ###\n        \n        Text: [input_text]\n\n        Rewrite the text to express the content with negative emotions.\n        ",
+        "feedback": "\n        ###\n\n        Text: I went to the restaurant and ate some chicken, it is delicious.\n\n        Rewrite the text to express the content with negative emotions.\n\n        Rewrite: I went to the restaurant and ate some chicken.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: No, the rewrite just express the same content without negative emotions. \n\n        ###\n\n        Text: Salads are a delicious way to begin the meal.\n\n        Rewrite the text to express the content with negative emotions.\n\n        Rewrite: Salads are unappropriate for appetizers.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: Yes, the \"appetizers\" expresses when the \"Salads\" are served, and the \"unappropriate\" is negative.\n\n        ###\n        \n        Text: [feedback]\n\n        Rewrite the text to express the content with negative emotions.\n\n        Rewrite: [generation]   \n\n        Does this rewrite meet the requirements?\n        ",
+        "refine": "  \n        ###\n\n        Text: I went to the restaurant and ate some chicken, it is delicious.\n\n        Rewrite the text to express the content with negative emotions.\n\n        Rewrite: I went to the restaurant and ate some chicken.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: No, the rewrite just express the same content without negative emotions. \n\n        Okay, let's try again. Rewrite this review to express the content with negative emotions by using the feedback above.\n\n        Rewrite: I ate some noodle in this restaurant, it is tasteless.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: No, the rewrite does not mention the taste of \u201cchicken\u201d which is the topic of the text.\n\n        Rewrite: The chicken I ordered in this restaurant is tasteless.\n\n        ###\n\n        Text: Salads are a delicious way to begin the meal.\n\n        Rewrite the text to express the content with negative emotions.\n\n        Rewrite: The staff serving for me is not kind.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: No, the \"staff serving\" is different from the topic about the taste of \"Salads\". \n\n        Okay, let's try again. Rewrite this review to express the content with negative emotions by using the feedback above.\n        \n        Rewrite: Salads are appropriate for appetizers.\n\n        Does this rewrite meet the requirements?\n\n        Feedback: No, the \"appetizers\" expresses when the \"Salads\" are served, but the \"appropriate\" is still positive.\n\n        Okay, let's try again. Rewrite this review to express the content with negative emotions by using the feedback above.\n\n        Rewrite: Salads are unappropriate for appetizers.\n\n        ###       \n        \n        Text: [feedback]\n\n        Rewrite the text to express the content with negative emotions.\n        \n        Rewrite: [generation1]   \n\n        Does this rewrite meet the requirements?\n\n        Feedback: [feed_back1] \n\n        Okay, let's try again. Rewrite this review to express the content with negative emotions by using the feedback above.\n        \n        Rewrite: [generation1]   \n\n        Does this rewrite meet the requirements?\n\n        Feedback: [feed_back2] \n\n        Okay, let's try again. Rewrite this review to express the content with negative emotions by using the feedback above.\n        "
+    }
+}

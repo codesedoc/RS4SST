@@ -1,0 +1,60 @@
+services:
+  ollama:
+    container_name: "ollama"
+    volumes:
+      - type: volume
+        source: cache
+        target: /root/.ollama
+    image: ollama/ollama
+    ports:
+        - $OLLAMA_SERVER_PORT:11434
+    working_dir: $WORK_DIR
+    env_file:
+      - .env
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+    tty: true
+    stdin_open: true
+
+  evaluator:
+    container_name: "evaluator"
+    build:
+      context: "."
+      tags:
+        - "${SERVER_HOST}/evaluator:0.1"
+      platforms:
+        - "linux/amd64"
+      args:
+        WORK_DIR: ${WORK_DIR}
+    pull_policy: build
+    image: "${SERVER_HOST}/evaluator:0.1"
+    working_dir: $WORK_DIR
+    command: python evaluator/manage.py runserver 0.0.0.0:$EVALUATOR_SERVER_PORT
+    volumes:
+      - type: volume
+        source: cache
+        target: /root/.cache
+    ports:
+      - $EVALUATOR_SERVER_PORT:$EVALUATOR_SERVER_PORT
+    env_file:
+      - .env
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [ gpu ]
+
+    tty: true
+    stdin_open: true
+
+volumes:
+  cache:
+
+
